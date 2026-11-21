@@ -1,0 +1,24 @@
+{
+  "coarse_soil_triangles": 2613,
+  "retained_exact_triangles": 2460,
+  "replaced_coarse_triangles": 153,
+  "added_fine_triangles": 217,
+  "fine_soil_triangles": 2677,
+  "max_changed_vertex_distance_J7_m": 2.0632593208821546,
+  "fine_soil_nodes": 1479,
+  "coarse_soil_nodes": 1445,
+  "spacing_mm": [
+    10,
+    5
+  ],
+  "area_difference_m2": -7.113877018127823e-06,
+  "J7_coordinate": [
+    31.69039533561162,
+    14.243042156716001
+  ],
+  "interface_edges": [
+    63,
+    67
+  ],
+  "validated_same_external_boundary": true
+}

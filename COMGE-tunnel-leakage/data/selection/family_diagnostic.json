@@ -1,0 +1,530 @@
+{
+  "createdUTC": "2026-10-11T12:13:17.842802+00:00",
+  "passed": true,
+  "source_sha256": "a707946d4c83457d5b172af3de0e1b43698f6d2e3e91fccacfb4bb662e11a31b",
+  "contracts_sha256": "2a21d344a0d9ee9d29f9abb438a463c9876ec6ab85b9950c4561de5c92dc031d",
+  "training_review_sha256": "af5184c3c6d4394b009d64cef914765a006e834af08fe2e19c3248838fb6da22",
+  "training_metrics": {
+    "random8": {
+      "all584": {
+        "relative_L2_pct": 0.31882442040403713,
+        "RMSE_L_m_d": 0.0003852080832592416,
+        "MAE_L_m_d": 0.0002125918071696766,
+        "max_relative_pct": 1.559067091115294,
+        "p95_relative_pct": 0.4867745257381308,
+        "bias_L_m_d": -9.695377363395695e-07,
+        "top10pct_relative_L2_pct": 0.43606871770016903,
+        "top10pct_underprediction_max_pct": 0.7440156301107695
+      },
+      "new72": {
+        "relative_L2_pct": 0.20447629739667544,
+        "RMSE_L_m_d": 0.00023511916161904724,
+        "MAE_L_m_d": 0.00016508265601825495,
+        "max_relative_pct": 0.5214135251230412,
+        "p95_relative_pct": 0.413101492580383,
+        "bias_L_m_d": -3.699808740778514e-05,
+        "top10pct_relative_L2_pct": 0.17611001203554838,
+        "top10pct_underprediction_max_pct": 0.25815043247445363
+      },
+      "old512": {
+        "relative_L2_pct": 0.3304101849912332,
+        "RMSE_L_m_d": 0.00040184331794554303,
+        "MAE_L_m_d": 0.00021927278155034526,
+        "max_relative_pct": 1.559067091115294,
+        "p95_relative_pct": 0.49584917708931253,
+        "bias_L_m_d": 4.096977061207463e-06,
+        "top10pct_relative_L2_pct": 0.4585001558059044,
+        "top10pct_underprediction_max_pct": 0.7440156301107695
+      }
+    },
+    "parameter_group8": {
+      "all584": {
+        "relative_L2_pct": 0.32386483856976955,
+        "RMSE_L_m_d": 0.0003912979863412775,
+        "MAE_L_m_d": 0.00021321245354431208,
+        "max_relative_pct": 1.719153453910021,
+        "p95_relative_pct": 0.46974048926218526,
+        "bias_L_m_d": 3.27084179368574e-05,
+        "top10pct_relative_L2_pct": 0.43315571412098797,
+        "top10pct_underprediction_max_pct": 0.7160558546081184
+      },
+      "new72": {
+        "relative_L2_pct": 0.20169833286287536,
+        "RMSE_L_m_d": 0.00023192489069126616,
+        "MAE_L_m_d": 0.00016729551476602454,
+        "max_relative_pct": 0.5787933915956889,
+        "p95_relative_pct": 0.4018448112566522,
+        "bias_L_m_d": -3.1704827459005124e-05,
+        "top10pct_relative_L2_pct": 0.15696932540259645,
+        "top10pct_underprediction_max_pct": 0.258696983983417
+      },
+      "old512": {
+        "relative_L2_pct": 0.3360942637168309,
+        "RMSE_L_m_d": 0.00040875626784331467,
+        "MAE_L_m_d": 0.00021966952306000877,
+        "max_relative_pct": 1.719153453910021,
+        "p95_relative_pct": 0.48612190404456884,
+        "bias_L_m_d": 4.176653057065057e-05,
+        "top10pct_relative_L2_pct": 0.45553440407634976,
+        "top10pct_underprediction_max_pct": 0.7160558546081184
+      }
+    }
+  },
+  "candidate_family_count": 2827,
+  "selected_families": [
+    {
+      "case_id": "PC02801",
+      "parameters": {
+        "soil_cov": 0.75,
+        "joint_cov": 0.22,
+        "soil_theta_m": [
+          24.0,
+          6.0
+        ],
+        "joint_theta_m": 0.3,
+        "soil_kernel": "exponential",
+        "joint_kernel": "exponential"
+      },
+      "parameter_key": "[0.75,0.22,24.0,6.0,0.3,\"exponential\",\"exponential\"]",
+      "kernel_pair": [
+        "exponential",
+        "exponential"
+      ],
+      "nearest_training_metadata_distance": 1.4941660812933848,
+      "local_training_group_mean_relative_error_pct": 0.24961244332772672,
+      "base_score": 0.883622214361514,
+      "selection_score": 0.883622214361514,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.75,0.1,3.178053830348,1.791759469228,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.5999999999999999
+        },
+        {
+          "parameter_group": "[0.75,0.4,3.178053830348,1.791759469228,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.40000000000000013
+        }
+      ],
+      "family_index": 0,
+      "scenario_id": "A128_AD00"
+    },
+    {
+      "case_id": "PC02146",
+      "parameters": {
+        "soil_cov": 0.5,
+        "joint_cov": 0.25,
+        "soil_theta_m": [
+          16.970562748477,
+          12.0
+        ],
+        "joint_theta_m": 0.3,
+        "soil_kernel": "exponential",
+        "joint_kernel": "exponential"
+      },
+      "parameter_key": "[0.5,0.25,16.970562748477,12.0,0.3,\"exponential\",\"exponential\"]",
+      "kernel_pair": [
+        "exponential",
+        "exponential"
+      ],
+      "nearest_training_metadata_distance": 1.637388893009394,
+      "local_training_group_mean_relative_error_pct": 0.20995377354621336,
+      "base_score": 0.8691192076406085,
+      "selection_score": 0.8691143332915585,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.25,0.25,2.484906649788,2.484906649788,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.2500000000000063
+        },
+        {
+          "parameter_group": "[0.25,0.25,3.871201010908,2.484906649788,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.24999999999999392
+        },
+        {
+          "parameter_group": "[0.75,0.25,2.484906649788,2.484906649788,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.49999999999999983
+        }
+      ],
+      "family_index": 1,
+      "scenario_id": "A128_AD01"
+    },
+    {
+      "case_id": "PC02317",
+      "parameters": {
+        "soil_cov": 0.5,
+        "joint_cov": 0.25,
+        "soil_theta_m": [
+          33.941125496954,
+          12.0
+        ],
+        "joint_theta_m": 0.3,
+        "soil_kernel": "exponential",
+        "joint_kernel": "exponential"
+      },
+      "parameter_key": "[0.5,0.25,33.941125496954,12.0,0.3,\"exponential\",\"exponential\"]",
+      "kernel_pair": [
+        "exponential",
+        "exponential"
+      ],
+      "nearest_training_metadata_distance": 1.637388893009394,
+      "local_training_group_mean_relative_error_pct": 0.18761362357723663,
+      "base_score": 0.8314467633533782,
+      "selection_score": 0.8298184199572765,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.25,0.25,3.871201010908,2.484906649788,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.4999999999999999
+        },
+        {
+          "parameter_group": "[0.75,0.25,2.484906649788,2.484906649788,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.2500000000000058
+        },
+        {
+          "parameter_group": "[0.75,0.25,3.871201010908,2.484906649788,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.2499999999999943
+        }
+      ],
+      "family_index": 2,
+      "scenario_id": "A128_AD02"
+    },
+    {
+      "case_id": "PC01447",
+      "parameters": {
+        "soil_cov": 0.75,
+        "joint_cov": 0.25,
+        "soil_theta_m": [
+          14.773732960139,
+          6.0
+        ],
+        "joint_theta_m": 0.3,
+        "soil_kernel": "exponential",
+        "joint_kernel": "exponential"
+      },
+      "parameter_key": "[0.75,0.25,14.773732960139,6.0,0.3,\"exponential\",\"exponential\"]",
+      "kernel_pair": [
+        "exponential",
+        "exponential"
+      ],
+      "nearest_training_metadata_distance": 1.6290404653779322,
+      "local_training_group_mean_relative_error_pct": 0.18477498445654342,
+      "base_score": 0.8254333215422709,
+      "selection_score": 0.8114847168261502,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.75,0.1,3.178053830348,1.791759469228,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.1500000000000005
+        },
+        {
+          "parameter_group": "[0.75,0.25,2.484906649788,1.098612288668,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.35000000000000003
+        },
+        {
+          "parameter_group": "[0.75,0.25,2.484906649788,2.484906649788,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.349999999999999
+        },
+        {
+          "parameter_group": "[0.75,0.4,3.178053830348,1.791759469228,-1.203972804326,1.0,0.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.15000000000000052
+        }
+      ],
+      "family_index": 3,
+      "scenario_id": "A128_AD03"
+    },
+    {
+      "case_id": "PC01627",
+      "parameters": {
+        "soil_cov": 0.75,
+        "joint_cov": 0.25,
+        "soil_theta_m": [
+          12.0,
+          6.0
+        ],
+        "joint_theta_m": 0.3,
+        "soil_kernel": "matern32",
+        "joint_kernel": "exponential"
+      },
+      "parameter_key": "[0.75,0.25,12.0,6.0,0.3,\"matern32\",\"exponential\"]",
+      "kernel_pair": [
+        "matern32",
+        "exponential"
+      ],
+      "nearest_training_metadata_distance": 1.550927817460267,
+      "local_training_group_mean_relative_error_pct": 0.2521304514360208,
+      "base_score": 0.8967102935974531,
+      "selection_score": 0.8967102935974531,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.75,0.25,2.484906649788,1.098612288668,-1.203972804326,0.0,1.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.5000000000000001
+        },
+        {
+          "parameter_group": "[0.75,0.25,2.484906649788,2.484906649788,-1.203972804326,0.0,1.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.49999999999999983
+        }
+      ],
+      "family_index": 4,
+      "scenario_id": "A128_AD04"
+    },
+    {
+      "case_id": "PC01667",
+      "parameters": {
+        "soil_cov": 0.75,
+        "joint_cov": 0.25,
+        "soil_theta_m": [
+          24.0,
+          12.0
+        ],
+        "joint_theta_m": 0.3,
+        "soil_kernel": "matern32",
+        "joint_kernel": "exponential"
+      },
+      "parameter_key": "[0.75,0.25,24.0,12.0,0.3,\"matern32\",\"exponential\"]",
+      "kernel_pair": [
+        "matern32",
+        "exponential"
+      ],
+      "nearest_training_metadata_distance": 1.319303006804619,
+      "local_training_group_mean_relative_error_pct": 0.28638378409794185,
+      "base_score": 0.872125928546162,
+      "selection_score": 0.8721144441933729,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.75,0.25,2.484906649788,2.484906649788,-1.203972804326,0.0,1.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.5000000000000001
+        },
+        {
+          "parameter_group": "[0.75,0.25,3.871201010908,2.484906649788,-1.203972804326,0.0,1.0,0.0,1.0,0.0,0.0]",
+          "weight": 0.49999999999999983
+        }
+      ],
+      "family_index": 5,
+      "scenario_id": "A128_AD05"
+    },
+    {
+      "case_id": "PC01831",
+      "parameters": {
+        "soil_cov": 0.75,
+        "joint_cov": 0.25,
+        "soil_theta_m": [
+          24.0,
+          3.0
+        ],
+        "joint_theta_m": 0.3,
+        "soil_kernel": "squared_exponential",
+        "joint_kernel": "exponential"
+      },
+      "parameter_key": "[0.75,0.25,24.0,3.0,0.3,\"squared_exponential\",\"exponential\"]",
+      "kernel_pair": [
+        "squared_exponential",
+        "exponential"
+      ],
+      "nearest_training_metadata_distance": 1.550927817460267,
+      "local_training_group_mean_relative_error_pct": 0.21165289176982863,
+      "base_score": 0.8609833746020517,
+      "selection_score": 0.8609833746020517,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.75,0.25,2.484906649788,1.098612288668,-1.203972804326,0.0,0.0,1.0,1.0,0.0,0.0]",
+          "weight": 0.5000000000000001
+        },
+        {
+          "parameter_group": "[0.75,0.25,3.871201010908,1.098612288668,-1.203972804326,0.0,0.0,1.0,1.0,0.0,0.0]",
+          "weight": 0.49999999999999983
+        }
+      ],
+      "family_index": 6,
+      "scenario_id": "A128_AD06"
+    },
+    {
+      "case_id": "PC02007",
+      "parameters": {
+        "soil_cov": 0.55,
+        "joint_cov": 0.25,
+        "soil_theta_m": [
+          24.0,
+          6.0
+        ],
+        "joint_theta_m": 0.3,
+        "soil_kernel": "squared_exponential",
+        "joint_kernel": "exponential"
+      },
+      "parameter_key": "[0.55,0.25,24.0,6.0,0.3,\"squared_exponential\",\"exponential\"]",
+      "kernel_pair": [
+        "squared_exponential",
+        "exponential"
+      ],
+      "nearest_training_metadata_distance": 1.141851049826607,
+      "local_training_group_mean_relative_error_pct": 0.2113699637325676,
+      "base_score": 0.769013088079236,
+      "selection_score": 0.7689146206242967,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.25,0.25,2.484906649788,1.098612288668,-1.203972804326,0.0,0.0,1.0,1.0,0.0,0.0]",
+          "weight": 0.1999999999999998
+        },
+        {
+          "parameter_group": "[0.25,0.25,3.871201010908,2.484906649788,-1.203972804326,0.0,0.0,1.0,1.0,0.0,0.0]",
+          "weight": 0.20000000000000007
+        },
+        {
+          "parameter_group": "[0.75,0.25,2.484906649788,2.484906649788,-1.203972804326,0.0,0.0,1.0,1.0,0.0,0.0]",
+          "weight": 0.2999999999999998
+        },
+        {
+          "parameter_group": "[0.75,0.25,3.871201010908,1.098612288668,-1.203972804326,0.0,0.0,1.0,1.0,0.0,0.0]",
+          "weight": 0.30000000000000027
+        }
+      ],
+      "family_index": 7,
+      "scenario_id": "A128_AD07"
+    },
+    {
+      "case_id": "PC00671",
+      "parameters": {
+        "soil_cov": 0.5,
+        "joint_cov": 0.25,
+        "soil_theta_m": [
+          24.0,
+          6.0
+        ],
+        "joint_theta_m": 0.6,
+        "soil_kernel": "exponential",
+        "joint_kernel": "matern32"
+      },
+      "parameter_key": "[0.5,0.25,24.0,6.0,0.6,\"exponential\",\"matern32\"]",
+      "kernel_pair": [
+        "exponential",
+        "matern32"
+      ],
+      "nearest_training_metadata_distance": 1.5218863521160746,
+      "local_training_group_mean_relative_error_pct": 0.32773285383404666,
+      "base_score": 0.9334984082065794,
+      "selection_score": 0.9334984082065794,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.5,0.1,3.178053830348,1.791759469228,-0.510825623766,1.0,0.0,0.0,0.0,1.0,0.0]",
+          "weight": 0.5
+        },
+        {
+          "parameter_group": "[0.5,0.4,3.178053830348,1.791759469228,-0.510825623766,1.0,0.0,0.0,0.0,1.0,0.0]",
+          "weight": 0.5
+        }
+      ],
+      "family_index": 8,
+      "scenario_id": "A128_AD08"
+    },
+    {
+      "case_id": "PC00871",
+      "parameters": {
+        "soil_cov": 0.5,
+        "joint_cov": 0.4,
+        "soil_theta_m": [
+          24.0,
+          6.0
+        ],
+        "joint_theta_m": 0.3,
+        "soil_kernel": "exponential",
+        "joint_kernel": "matern32"
+      },
+      "parameter_key": "[0.5,0.4,24.0,6.0,0.3,\"exponential\",\"matern32\"]",
+      "kernel_pair": [
+        "exponential",
+        "matern32"
+      ],
+      "nearest_training_metadata_distance": 1.5218863521160741,
+      "local_training_group_mean_relative_error_pct": 0.29304811458394586,
+      "base_score": 0.911743898125221,
+      "selection_score": 0.9117438963307265,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.5,0.4,3.178053830348,1.791759469228,-0.510825623766,1.0,0.0,0.0,0.0,1.0,0.0]",
+          "weight": 0.49999999999999994
+        },
+        {
+          "parameter_group": "[0.5,0.4,3.178053830348,1.791759469228,-1.897119984886,1.0,0.0,0.0,0.0,1.0,0.0]",
+          "weight": 0.5000000000000001
+        }
+      ],
+      "family_index": 9,
+      "scenario_id": "A128_AD09"
+    },
+    {
+      "case_id": "PC01112",
+      "parameters": {
+        "soil_cov": 0.5,
+        "joint_cov": 0.25,
+        "soil_theta_m": [
+          24.0,
+          6.0
+        ],
+        "joint_theta_m": 0.6,
+        "soil_kernel": "exponential",
+        "joint_kernel": "squared_exponential"
+      },
+      "parameter_key": "[0.5,0.25,24.0,6.0,0.6,\"exponential\",\"squared_exponential\"]",
+      "kernel_pair": [
+        "exponential",
+        "squared_exponential"
+      ],
+      "nearest_training_metadata_distance": 1.5218863521160746,
+      "local_training_group_mean_relative_error_pct": 0.17618101629481975,
+      "base_score": 0.7914750619030775,
+      "selection_score": 0.7914750619030775,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.5,0.1,3.178053830348,1.791759469228,-0.510825623766,1.0,0.0,0.0,0.0,0.0,1.0]",
+          "weight": 0.5
+        },
+        {
+          "parameter_group": "[0.5,0.4,3.178053830348,1.791759469228,-0.510825623766,1.0,0.0,0.0,0.0,0.0,1.0]",
+          "weight": 0.5
+        }
+      ],
+      "family_index": 10,
+      "scenario_id": "A128_AD10"
+    },
+    {
+      "case_id": "PC00892",
+      "parameters": {
+        "soil_cov": 0.5,
+        "joint_cov": 0.1,
+        "soil_theta_m": [
+          24.0,
+          6.0
+        ],
+        "joint_theta_m": 0.3,
+        "soil_kernel": "exponential",
+        "joint_kernel": "squared_exponential"
+      },
+      "parameter_key": "[0.5,0.1,24.0,6.0,0.3,\"exponential\",\"squared_exponential\"]",
+      "kernel_pair": [
+        "exponential",
+        "squared_exponential"
+      ],
+      "nearest_training_metadata_distance": 1.5218863521160741,
+      "local_training_group_mean_relative_error_pct": 0.15249106769701606,
+      "base_score": 0.7449593208348072,
+      "selection_score": 0.7449593190403127,
+      "same_kernel_training_hull_weights": [
+        {
+          "parameter_group": "[0.5,0.1,3.178053830348,1.791759469228,-0.510825623766,1.0,0.0,0.0,0.0,0.0,1.0]",
+          "weight": 0.49999999999999994
+        },
+        {
+          "parameter_group": "[0.5,0.1,3.178053830348,1.791759469228,-1.897119984886,1.0,0.0,0.0,0.0,0.0,1.0]",
+          "weight": 0.5000000000000001
+        }
+      ],
+      "family_index": 11,
+      "scenario_id": "A128_AD11"
+    }
+  ],
+  "ranking_sha256": "056f29d7b0e552a03d6337cb63e280900b9ea3ece635bd033d32955bbf38125c",
+  "excluded_blind_parameter_families": 16,
+  "parameter_range_accuracy_qualified": false,
+  "feature_sufficiency_proven": false,
+  "selection_rule": "50% rank nearest metadata distance +50% rank local training-group OOF mean absolute relative residual; kernel quotas4/2/2/2/2 with proximity penalty. Then full-field model disagreement/coverage/upper response and feature-near spatially-different pair selection.",
+  "candidate_inputs_to_prepare": 48,
+  "physical_calls": 0,
+  "validation_used": false,
+  "wall_s": 0.2904679999919608,
+  "process_cpu_s": 0.375
+}

@@ -1,0 +1,141 @@
+{
+  "passed": true,
+  "curves": [
+    {
+      "curve": "joint_cov_exponential_theta0.15",
+      "65536": {
+        "max_count": 1028,
+        "max_COV": [
+          0.22
+        ]
+      },
+      "131072": {
+        "max_count": 2066,
+        "max_COV": [
+          0.22
+        ]
+      }
+    },
+    {
+      "curve": "joint_cov_exponential_theta0.3",
+      "65536": {
+        "max_count": 3358,
+        "max_COV": [
+          0.22
+        ]
+      },
+      "131072": {
+        "max_count": 6639,
+        "max_COV": [
+          0.22
+        ]
+      }
+    },
+    {
+      "curve": "joint_cov_exponential_theta0.6",
+      "65536": {
+        "max_count": 6018,
+        "max_COV": [
+          0.235
+        ]
+      },
+      "131072": {
+        "max_count": 12048,
+        "max_COV": [
+          0.235
+        ]
+      }
+    },
+    {
+      "curve": "joint_cov_matern32_theta0.15",
+      "65536": {
+        "max_count": 1189,
+        "max_COV": [
+          0.22
+        ]
+      },
+      "131072": {
+        "max_count": 2391,
+        "max_COV": [
+          0.22
+        ]
+      }
+    },
+    {
+      "curve": "joint_cov_matern32_theta0.3",
+      "65536": {
+        "max_count": 4016,
+        "max_COV": [
+          0.22
+        ]
+      },
+      "131072": {
+        "max_count": 7968,
+        "max_COV": [
+          0.22
+        ]
+      }
+    },
+    {
+      "curve": "joint_cov_matern32_theta0.6",
+      "65536": {
+        "max_count": 7300,
+        "max_COV": [
+          0.235
+        ]
+      },
+      "131072": {
+        "max_count": 14568,
+        "max_COV": [
+          0.235
+        ]
+      }
+    },
+    {
+      "curve": "joint_cov_squared_exponential_theta0.15",
+      "65536": {
+        "max_count": 1285,
+        "max_COV": [
+          0.22
+        ]
+      },
+      "131072": {
+        "max_count": 2568,
+        "max_COV": [
+          0.22
+        ]
+      }
+    },
+    {
+      "curve": "joint_cov_squared_exponential_theta0.3",
+      "65536": {
+        "max_count": 4353,
+        "max_COV": [
+          0.22
+        ]
+      },
+      "131072": {
+        "max_count": 8682,
+        "max_COV": [
+          0.22
+        ]
+      }
+    },
+    {
+      "curve": "joint_cov_squared_exponential_theta0.6",
+      "65536": {
+        "max_count": 7960,
+        "max_COV": [
+          0.235
+        ]
+      },
+      "131072": {
+        "max_count": 15910,
+        "max_COV": [
+          0.235
+        ]
+      }
+    }
+  ],
+  "input_sha": "17f15e137b0e53d0d2262bda3f2215cfe1bd011738925112432461862a5bf60d"
+}

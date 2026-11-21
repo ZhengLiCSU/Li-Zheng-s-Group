@@ -1,0 +1,17 @@
+{
+  "review_python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "matplotlib": "3.11.2"
+  },
+  "forward_solver": "MATLAB R2024b",
+  "review_entrypoint": "verify_review.py",
+  "new_training_required": false,
+  "new_physical_solve_required": false,
+  "original_model_sha256": "28bbe6693261594339f4a5b575035e0b13c7e3d045afa5341d648b77f7fa8b6c",
+  "source_note": "Environment records the compatible review runtime; original source files and fitted artifacts remain byte-for-byte copies."
+}

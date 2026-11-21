@@ -1,0 +1,63 @@
+function field=resolve_soil_conductivity_field(input,xy,P)
+%RESOLVE_SOIL_CONDUCTIVITY_FIELD Positive reference-material Ksat multipliers.
+% INPUT.coordinates_m / logMultiplier define a piecewise linear log field.
+% Optional quadratureCoordinates_m/quadratureLogMultiplier supply values
+% directly at the SAME P1/SCV points, avoiding random-field interpolation bias.
+% No extrapolation, truncation, randomness or clipping is performed. The
+% supplied realization is fixed in space and time. A scalar logMultiplier
+% with empty coordinates is a constant multiplier. Empty inputs are inert.
+basic={'coordinates_m';'logMultiplier'};
+direct=[basic;{'quadratureCoordinates_m';'quadratureLogMultiplier'}];
+assert(isstruct(input)&&isscalar(input)&& ...
+    (isequal(sort(fieldnames(input)),sort(basic))|| ...
+    isequal(sort(fieldnames(input)),sort(direct))), ...
+    'SoilField:Input','Supply nodal fields and optionally both direct quadrature fields.');
+assert(isnumeric(xy)&&size(xy,2)==2&&all(isfinite(xy(:))) ...
+    &&size(P,2)==size(xy,1),'SoilField:Mesh','Invalid soil coordinates or SCV interpolation.');
+v=input.logMultiplier;x=input.coordinates_m;
+field=struct('enabled',false,'nodalLogMultiplier',zeros(size(xy,1),1), ...
+    'nodalMultiplier',1,'quadratureMultiplier',1, ...
+    'interpretation','Fixed reference-material multiplier of Ksat; no random generator.');
+if isempty(v)&&isempty(x)
+    assert(~isfield(input,'quadratureCoordinates_m')|| ...
+        (isempty(input.quadratureCoordinates_m)&&isempty(input.quadratureLogMultiplier)), ...
+        'SoilField:Incomplete','Direct quadrature fields require matching nodal values.');
+    return;
+end
+assert(isnumeric(v)&&isreal(v)&&isvector(v)&&all(isfinite(v(:))), ...
+    'SoilField:Values','logMultiplier must be a finite real vector.');
+if isempty(x)
+    assert(isscalar(v),'SoilField:Coordinates','Only a constant field may omit coordinates.');
+    logNode=repmat(double(v),size(xy,1),1);
+else
+    assert(isnumeric(x)&&isreal(x)&&size(x,2)==2&&size(x,1)==numel(v) ...
+        &&size(x,1)>=3&&all(isfinite(x(:)))&&size(unique(x,'rows'),1)==size(x,1) ...
+        &&rank(x-mean(x,1))==2,'SoilField:Coordinates', ...
+        'Provide unique noncollinear coordinates with one log value per point.');
+    if isequal(x,xy)
+        logNode=double(v(:));
+    else
+        F=scatteredInterpolant(double(x(:,1)),double(x(:,2)),double(v(:)),'linear','none');
+        logNode=F(xy(:,1),xy(:,2));
+    end
+    assert(all(isfinite(logNode)),'SoilField:Coverage', ...
+        'Field support does not cover every soil node; extrapolation is prohibited.');
+end
+field.enabled=true;field.nodalLogMultiplier=logNode;
+field.nodalMultiplier=exp(logNode);field.quadratureMultiplier=exp(P*logNode);
+if isfield(input,'quadratureCoordinates_m')&& ...
+        ~(isempty(input.quadratureCoordinates_m)&&isempty(input.quadratureLogMultiplier))
+    qx=input.quadratureCoordinates_m;qv=input.quadratureLogMultiplier;
+    expected=P*xy;
+    assert(isnumeric(qx)&&isreal(qx)&&isequal(size(qx),size(expected)) ...
+        &&all(isfinite(qx(:)))&&max(abs(qx(:)-expected(:)))<1e-9, ...
+        'SoilField:QuadratureCoordinates','Direct values must match actual SCV points in order.');
+    assert(isnumeric(qv)&&isreal(qv)&&isvector(qv)&&numel(qv)==size(P,1) ...
+        &&all(isfinite(qv(:))),'SoilField:QuadratureValues','Supply every finite quadrature log value.');
+    field.quadratureMultiplier=exp(qv(:));
+    field.interpretation='Fixed direct nodal and actual SCV values from one spatial realization.';
+end
+assert(all(isfinite(field.nodalMultiplier)&field.nodalMultiplier>0) ...
+    &&all(isfinite(field.quadratureMultiplier)&field.quadratureMultiplier>0), ...
+    'SoilField:Range','Conductivity multiplier overflow/underflow; revise the input field.');
+end

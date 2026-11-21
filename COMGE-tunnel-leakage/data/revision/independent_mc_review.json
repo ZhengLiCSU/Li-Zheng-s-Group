@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "case_rows": 20905,
+  "paired_rows": 270,
+  "raw_check_cases": [
+    "PC00000",
+    "NC00090",
+    "PC01091"
+  ],
+  "raw_bindings": {
+    "random_field_reliability_20261009/paper_dense608_prediction_recovery_20261012/mc_results/PC00000.npz": "ab665f8f320a0c428ede6c619c17593dfde9200c60259da83b4c85d84ea6d378",
+    "random_field_reliability_20261009/paper_manuscript26_20261012/new_mc_results/NC00090.npz": "cc12d7f4fd2579772f383984e7eda635ae5d9db58c58142b46f159d7d710b735",
+    "random_field_reliability_20261009/paper_dense608_prediction_recovery_20261012/mc_results/PC01091.npz": "62f4de102eb0fa0845efcffefa0c72eec200497fded76483cf159e42329db38d"
+  },
+  "summary": {
+    "max_probability_change_pp": 0.08697509765625,
+    "max_mean_relative_change_percent": 0.1469612019195618,
+    "max_p95_relative_change_percent": 0.3606263591500814,
+    "min_exceedance_count": 363
+  },
+  "source_sha256": "ce3d24f0bd7081957ce1b18f12c96087073649ebe9ebf6cb30b1e6055e59b4d7",
+  "wall_s": 0.5910904000047594,
+  "new_fits": 0,
+  "physical_solver_calls": 0
+}

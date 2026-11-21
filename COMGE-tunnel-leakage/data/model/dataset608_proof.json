@@ -1,0 +1,66 @@
+{
+  "createdUTC": "2026-10-11T15:48:59.569028+00:00",
+  "passed": true,
+  "check_count": 10,
+  "checks": [
+    {
+      "name": "dataset584_proof.json_passed",
+      "passed": true
+    },
+    {
+      "name": "independent_training584_review.json_passed",
+      "passed": true
+    },
+    {
+      "name": "independent_extraction_review.json_passed",
+      "passed": true
+    },
+    {
+      "name": "extraction_proof.json_passed",
+      "passed": true
+    },
+    {
+      "name": "immutable_old584_dataset",
+      "passed": true
+    },
+    {
+      "name": "608_unique_disjoint_training",
+      "passed": true
+    },
+    {
+      "name": "exact96_augmentation_ids",
+      "passed": true
+    },
+    {
+      "name": "no_any_validation_ids",
+      "passed": true
+    },
+    {
+      "name": "28_finite_positive_responses",
+      "passed": true
+    },
+    {
+      "name": "no_identical_metadata_split_names",
+      "passed": true
+    }
+  ],
+  "bindings": {
+    "random_field_reliability_20261009/augmentation128_execution_20261011/first72_postprocess_20261011/dataset584_proof.json": "6898fd7874910b105cdeeae6f9fea536868f4eb1f1fd69fe300991c8b0dbcbae",
+    "random_field_reliability_20261009/augmentation128_execution_20261011/first72_postprocess_20261011/independent_training584_review.json": "af5184c3c6d4394b009d64cef914765a006e834af08fe2e19c3248838fb6da22",
+    "random_field_reliability_20261009/augmentation128_execution_20261011/adaptive24_postprocess_20261011/independent_extraction_review.json": "81c14c500f16413107db27af0a5c593975a87a5b7126b2949f5bbe404f4d7647",
+    "random_field_reliability_20261009/augmentation128_execution_20261011/adaptive24_postprocess_20261011/extraction_proof.json": "578e7b2d19b17e37f1045cf93713813b79fe80e0632ca1af191fecb180002eaa",
+    "random_field_reliability_20261009/augmentation128_execution_20261011/first72_postprocess_20261011/training584.npz": "83da9bc6c5d3b8a2c6faa8dda2a5e76e8332cafa53cdf6c9306de041b594d184",
+    "random_field_reliability_20261009/augmentation128_execution_20261011/adaptive24_postprocess_20261011/adaptive24_training_data.npz": "9eece6940c5bd89b6b7d4753ce2d3d4754b2fa48631f10f08840594281037eec"
+  },
+  "source_sha256": "0dbe160c67fe7d8750d714598f1217749fe7bb66ad1e8082f5a795fba4944a53",
+  "dataset_sha256": "5230d39c8ec5e0ea719d998045b1da1cf5865d825c9447306b061a24d2f7f0c5",
+  "count": 608,
+  "new_count": 24,
+  "augmentation_count": 96,
+  "parameter_family_count": 95,
+  "grouping": "Canonical rounded11 metadata features; identical parameters cannot cross family folds",
+  "validation_used": false,
+  "physical_calls": 0,
+  "wall_s": 1.4410410999989836,
+  "process_cpu_s": 1.421875
+}

@@ -1,0 +1,4 @@
+﻿sample_id,joint_cov,joint_theta_m,joint_kernel,true_peak24h_L_m_day,frozen_prediction_L_m_day,absolute_relative_error_percent,predeclared_individual_threshold_percent,passed,solver_native_wall_s,solver_native_CPU_s
+53000,0.25,0.3,exponential,0.1115551615011467,0.11119691214319846,0.32114099708828714,2,True,435.2718952,1104.0625
+53001,0.22,0.3,exponential,0.10719469894561437,0.10712632833673792,0.06378170707036128,2,True,425.3132041,1092.96875
+53002,0.4,0.6,exponential,0.09668927182595367,0.0965458181996457,0.1483656083026505,2,True,415.2270511,1066.171875

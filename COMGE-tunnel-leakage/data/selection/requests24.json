@@ -1,0 +1,1058 @@
+[
+  {
+    "sample_id": 41072,
+    "request_key": "A128_ADAPT00",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD00",
+    "parameters": {
+      "soil_cov": 0.75,
+      "joint_cov": 0.22,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      21419000,
+      3369668905
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      0
+    ],
+    "candidate_file": "adaptive_candidate_000.npz",
+    "candidate_sha256": "46d066684cc6992db54220f05413594067af90bbb00e7807edee3d4bf736a089",
+    "candidate_index": 0,
+    "descriptor": [
+      0,
+      0,
+      0.75,
+      0.22,
+      24.0,
+      6.0,
+      0.3,
+      0,
+      0,
+      21419000,
+      3369668905
+    ],
+    "selection_priority_score": 0.41562499999999997
+  },
+  {
+    "sample_id": 41073,
+    "request_key": "A128_ADAPT01",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD00",
+    "parameters": {
+      "soil_cov": 0.75,
+      "joint_cov": 0.22,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      543409584,
+      2132869418
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      3
+    ],
+    "candidate_file": "adaptive_candidate_003.npz",
+    "candidate_sha256": "ed49ac08b15181687fe69062ba4edf5d338b9fb12a732fa2e190bba4aef07054",
+    "candidate_index": 3,
+    "descriptor": [
+      0,
+      0,
+      0.75,
+      0.22,
+      24.0,
+      6.0,
+      0.3,
+      0,
+      0,
+      543409584,
+      2132869418
+    ],
+    "selection_priority_score": 0.5708333333333334
+  },
+  {
+    "sample_id": 41074,
+    "request_key": "A128_ADAPT02",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD01",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        16.970562748477,
+        12.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      931906975,
+      3148582275
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      4
+    ],
+    "candidate_file": "adaptive_candidate_004.npz",
+    "candidate_sha256": "68bb78f62bd75c76d21d7471a3ba37d9a13ae87e2dcaeabeb7d0f6bb6a5cce1b",
+    "candidate_index": 4,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.25,
+      16.970562748477,
+      12.0,
+      0.3,
+      0,
+      0,
+      931906975,
+      3148582275
+    ],
+    "selection_priority_score": 0.36875
+  },
+  {
+    "sample_id": 41075,
+    "request_key": "A128_ADAPT03",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD01",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        16.970562748477,
+        12.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      3603686731,
+      1925089887
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      6
+    ],
+    "candidate_file": "adaptive_candidate_006.npz",
+    "candidate_sha256": "793488b29960aac3d402b0953d2861b2082a9169a6b964d55a6cc267272dae58",
+    "candidate_index": 6,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.25,
+      16.970562748477,
+      12.0,
+      0.3,
+      0,
+      0,
+      3603686731,
+      1925089887
+    ],
+    "selection_priority_score": 0.29374999999999996
+  },
+  {
+    "sample_id": 41076,
+    "request_key": "A128_ADAPT04",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD02",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        33.941125496954,
+        12.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      4052460476,
+      919523147
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      9
+    ],
+    "candidate_file": "adaptive_candidate_009.npz",
+    "candidate_sha256": "cb998a6ce15e10c871583e7b3c87876ed7074a048f57cf9c343cb129b714bc0f",
+    "candidate_index": 9,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.25,
+      33.941125496954,
+      12.0,
+      0.3,
+      0,
+      0,
+      4052460476,
+      919523147
+    ],
+    "selection_priority_score": 0.21666666666666667
+  },
+  {
+    "sample_id": 41077,
+    "request_key": "A128_ADAPT05",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD02",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        33.941125496954,
+        12.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      134190818,
+      3863819744
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      10
+    ],
+    "candidate_file": "adaptive_candidate_010.npz",
+    "candidate_sha256": "1bad8783b82da2d59a4cbd6bf4629bf6de9323c57582008a75294a019f93c2e9",
+    "candidate_index": 10,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.25,
+      33.941125496954,
+      12.0,
+      0.3,
+      0,
+      0,
+      134190818,
+      3863819744
+    ],
+    "selection_priority_score": 0.2739583333333333
+  },
+  {
+    "sample_id": 41078,
+    "request_key": "A128_ADAPT06",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD03",
+    "parameters": {
+      "soil_cov": 0.75,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        14.773732960139,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      2768573016,
+      3531494989
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      12
+    ],
+    "candidate_file": "adaptive_candidate_012.npz",
+    "candidate_sha256": "9f8477a593f9e402657244dd910223f2ec4b78a43f5ff381965c51e9c699be6d",
+    "candidate_index": 12,
+    "descriptor": [
+      0,
+      0,
+      0.75,
+      0.25,
+      14.773732960139,
+      6.0,
+      0.3,
+      0,
+      0,
+      2768573016,
+      3531494989
+    ],
+    "selection_priority_score": 0.32083333333333336
+  },
+  {
+    "sample_id": 41079,
+    "request_key": "A128_ADAPT07",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD03",
+    "parameters": {
+      "soil_cov": 0.75,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        14.773732960139,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      2901454874,
+      430000216
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      15
+    ],
+    "candidate_file": "adaptive_candidate_015.npz",
+    "candidate_sha256": "04948566254bcb3d9110ae803d5b11ff5e7dd27629047a8e4495fde0fa7f2630",
+    "candidate_index": 15,
+    "descriptor": [
+      0,
+      0,
+      0.75,
+      0.25,
+      14.773732960139,
+      6.0,
+      0.3,
+      0,
+      0,
+      2901454874,
+      430000216
+    ],
+    "selection_priority_score": 0.1875
+  },
+  {
+    "sample_id": 41080,
+    "request_key": "A128_ADAPT08",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD04",
+    "parameters": {
+      "soil_cov": 0.75,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        12.0,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "matern32",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      1232021938,
+      595934379
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      16
+    ],
+    "candidate_file": "adaptive_candidate_016.npz",
+    "candidate_sha256": "164203bc17ab199ce7d59b635cc32bcb0eaaa7c67c6421bbb9668849e4a8e22f",
+    "candidate_index": 16,
+    "descriptor": [
+      0,
+      0,
+      0.75,
+      0.25,
+      12.0,
+      6.0,
+      0.3,
+      1,
+      0,
+      1232021938,
+      595934379
+    ],
+    "selection_priority_score": 0.7010416666666667
+  },
+  {
+    "sample_id": 41081,
+    "request_key": "A128_ADAPT09",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD04",
+    "parameters": {
+      "soil_cov": 0.75,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        12.0,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "matern32",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      1014624659,
+      362552334
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      17
+    ],
+    "candidate_file": "adaptive_candidate_017.npz",
+    "candidate_sha256": "c9874846b481fe93431c1be3dd8f533f9253b500bf2a92a9c19cd7da4c02d664",
+    "candidate_index": 17,
+    "descriptor": [
+      0,
+      0,
+      0.75,
+      0.25,
+      12.0,
+      6.0,
+      0.3,
+      1,
+      0,
+      1014624659,
+      362552334
+    ],
+    "selection_priority_score": 0.4927083333333333
+  },
+  {
+    "sample_id": 41082,
+    "request_key": "A128_ADAPT10",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD05",
+    "parameters": {
+      "soil_cov": 0.75,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        24.0,
+        12.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "matern32",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      3336198969,
+      532022079
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      20
+    ],
+    "candidate_file": "adaptive_candidate_020.npz",
+    "candidate_sha256": "80f83845bac9b503e19895e0b7479a7b374f57ec1a91eb5c0759b2536988ede1",
+    "candidate_index": 20,
+    "descriptor": [
+      0,
+      0,
+      0.75,
+      0.25,
+      24.0,
+      12.0,
+      0.3,
+      1,
+      0,
+      3336198969,
+      532022079
+    ],
+    "selection_priority_score": 0.6072916666666667
+  },
+  {
+    "sample_id": 41083,
+    "request_key": "A128_ADAPT11",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD05",
+    "parameters": {
+      "soil_cov": 0.75,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        24.0,
+        12.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "matern32",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      4187584307,
+      2901140816
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      22
+    ],
+    "candidate_file": "adaptive_candidate_022.npz",
+    "candidate_sha256": "1c74f55c7d5e97ce158b4b5267851f78a3eb277d9a852b7a7c3c5e98eaa882f6",
+    "candidate_index": 22,
+    "descriptor": [
+      0,
+      0,
+      0.75,
+      0.25,
+      24.0,
+      12.0,
+      0.3,
+      1,
+      0,
+      4187584307,
+      2901140816
+    ],
+    "selection_priority_score": 0.709375
+  },
+  {
+    "sample_id": 41084,
+    "request_key": "A128_ADAPT12",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD06",
+    "parameters": {
+      "soil_cov": 0.75,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        24.0,
+        3.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "squared_exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      735345441,
+      1375808846
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      24
+    ],
+    "candidate_file": "adaptive_candidate_024.npz",
+    "candidate_sha256": "c56822a111edc1971f524b196170d284b78017c01ab13f5f227222e2686ebe2c",
+    "candidate_index": 24,
+    "descriptor": [
+      0,
+      0,
+      0.75,
+      0.25,
+      24.0,
+      3.0,
+      0.3,
+      2,
+      0,
+      735345441,
+      1375808846
+    ],
+    "selection_priority_score": 0.7250000000000001
+  },
+  {
+    "sample_id": 41085,
+    "request_key": "A128_ADAPT13",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD06",
+    "parameters": {
+      "soil_cov": 0.75,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        24.0,
+        3.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "squared_exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      3838926688,
+      1368582211
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      26
+    ],
+    "candidate_file": "adaptive_candidate_026.npz",
+    "candidate_sha256": "b0b6d91cd8f14e998a437d9077c78015d43387d1f5ddf1893da546e4cad43ccb",
+    "candidate_index": 26,
+    "descriptor": [
+      0,
+      0,
+      0.75,
+      0.25,
+      24.0,
+      3.0,
+      0.3,
+      2,
+      0,
+      3838926688,
+      1368582211
+    ],
+    "selection_priority_score": 0.8333333333333333
+  },
+  {
+    "sample_id": 41086,
+    "request_key": "A128_ADAPT14",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD07",
+    "parameters": {
+      "soil_cov": 0.55,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "squared_exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      1440081813,
+      3193849606
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      30
+    ],
+    "candidate_file": "adaptive_candidate_030.npz",
+    "candidate_sha256": "044b70010ea23407987845cecfc33b0e8a200202b90673f8b67bcdc58fdfd293",
+    "candidate_index": 30,
+    "descriptor": [
+      0,
+      0,
+      0.55,
+      0.25,
+      24.0,
+      6.0,
+      0.3,
+      2,
+      0,
+      1440081813,
+      3193849606
+    ],
+    "selection_priority_score": 0.459375
+  },
+  {
+    "sample_id": 41087,
+    "request_key": "A128_ADAPT15",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD07",
+    "parameters": {
+      "soil_cov": 0.55,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "squared_exponential",
+      "joint_kernel": "exponential"
+    },
+    "seeds": [
+      1691295500,
+      2347075782
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      31
+    ],
+    "candidate_file": "adaptive_candidate_031.npz",
+    "candidate_sha256": "9e18ee4a3ea578eb7cba661d4c29f75acc5e5b50339c622c1873b17a75a10290",
+    "candidate_index": 31,
+    "descriptor": [
+      0,
+      0,
+      0.55,
+      0.25,
+      24.0,
+      6.0,
+      0.3,
+      2,
+      0,
+      1691295500,
+      2347075782
+    ],
+    "selection_priority_score": 0.6427083333333333
+  },
+  {
+    "sample_id": 41088,
+    "request_key": "A128_ADAPT16",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD08",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.6,
+      "soil_kernel": "exponential",
+      "joint_kernel": "matern32"
+    },
+    "seeds": [
+      2163839176,
+      2518441829
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      32
+    ],
+    "candidate_file": "adaptive_candidate_032.npz",
+    "candidate_sha256": "b8ad95ce5fd53c692b3a779a4d3b107c922951e2cb24e14875f31a05ab0643f6",
+    "candidate_index": 32,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.25,
+      24.0,
+      6.0,
+      0.6,
+      0,
+      1,
+      2163839176,
+      2518441829
+    ],
+    "selection_priority_score": 0.21458333333333335
+  },
+  {
+    "sample_id": 41089,
+    "request_key": "A128_ADAPT17",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD08",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.6,
+      "soil_kernel": "exponential",
+      "joint_kernel": "matern32"
+    },
+    "seeds": [
+      3198273063,
+      3841938444
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      33
+    ],
+    "candidate_file": "adaptive_candidate_033.npz",
+    "candidate_sha256": "25abb11fff854818f3815bbcbaaa4fc6423ddece87dd0802e31d95e9db2ed418",
+    "candidate_index": 33,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.25,
+      24.0,
+      6.0,
+      0.6,
+      0,
+      1,
+      3198273063,
+      3841938444
+    ],
+    "selection_priority_score": 0.365625
+  },
+  {
+    "sample_id": 41090,
+    "request_key": "A128_ADAPT18",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD09",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.4,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "matern32"
+    },
+    "seeds": [
+      1085148995,
+      2830291757
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      37
+    ],
+    "candidate_file": "adaptive_candidate_037.npz",
+    "candidate_sha256": "2071bc5e612bd277295d64bdc8e89b831d3a2653dfefa8a47f53111a000be098",
+    "candidate_index": 37,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.4,
+      24.0,
+      6.0,
+      0.3,
+      0,
+      1,
+      1085148995,
+      2830291757
+    ],
+    "selection_priority_score": 0.7458333333333332
+  },
+  {
+    "sample_id": 41091,
+    "request_key": "A128_ADAPT19",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD09",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.4,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "matern32"
+    },
+    "seeds": [
+      424043172,
+      1638288141
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      38
+    ],
+    "candidate_file": "adaptive_candidate_038.npz",
+    "candidate_sha256": "5145b171ed4631b0463b0911e99578ce1487a1601aa103a49cd4dad355e666f6",
+    "candidate_index": 38,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.4,
+      24.0,
+      6.0,
+      0.3,
+      0,
+      1,
+      424043172,
+      1638288141
+    ],
+    "selection_priority_score": 0.8885416666666667
+  },
+  {
+    "sample_id": 41092,
+    "request_key": "A128_ADAPT20",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD10",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.6,
+      "soil_kernel": "exponential",
+      "joint_kernel": "squared_exponential"
+    },
+    "seeds": [
+      622078743,
+      1131106053
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      40
+    ],
+    "candidate_file": "adaptive_candidate_040.npz",
+    "candidate_sha256": "9e3b7697233eabf132f4cbb24d23fe7265f82018f29e572ec860d93552908981",
+    "candidate_index": 40,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.25,
+      24.0,
+      6.0,
+      0.6,
+      0,
+      2,
+      622078743,
+      1131106053
+    ],
+    "selection_priority_score": 0.446875
+  },
+  {
+    "sample_id": 41093,
+    "request_key": "A128_ADAPT21",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD10",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.25,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.6,
+      "soil_kernel": "exponential",
+      "joint_kernel": "squared_exponential"
+    },
+    "seeds": [
+      3335300563,
+      204315433
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      42
+    ],
+    "candidate_file": "adaptive_candidate_042.npz",
+    "candidate_sha256": "919eab705867aa34cf647e0784280b0c334ab21a3a20156119599a2705ba56e3",
+    "candidate_index": 42,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.25,
+      24.0,
+      6.0,
+      0.6,
+      0,
+      2,
+      3335300563,
+      204315433
+    ],
+    "selection_priority_score": 0.571875
+  },
+  {
+    "sample_id": 41094,
+    "request_key": "A128_ADAPT22",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD11",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.1,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "squared_exponential"
+    },
+    "seeds": [
+      3812717637,
+      1464556254
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      44
+    ],
+    "candidate_file": "adaptive_candidate_044.npz",
+    "candidate_sha256": "119d7e946f3f896143102dbb9fa70c3a3021c04cfdb4a001c44284ca6b639559",
+    "candidate_index": 44,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.1,
+      24.0,
+      6.0,
+      0.3,
+      0,
+      2,
+      3812717637,
+      1464556254
+    ],
+    "selection_priority_score": 0.7697916666666667
+  },
+  {
+    "sample_id": 41095,
+    "request_key": "A128_ADAPT23",
+    "role": "training",
+    "stage": "adaptive24",
+    "scenario_id": "A128_AD11",
+    "parameters": {
+      "soil_cov": 0.5,
+      "joint_cov": 0.1,
+      "soil_theta_m": [
+        24.0,
+        6.0
+      ],
+      "joint_theta_m": 0.3,
+      "soil_kernel": "exponential",
+      "joint_kernel": "squared_exponential"
+    },
+    "seeds": [
+      2666624441,
+      276646038
+    ],
+    "seed_namespace": [
+      20261011,
+      12802,
+      47
+    ],
+    "candidate_file": "adaptive_candidate_047.npz",
+    "candidate_sha256": "6a32181d2b43667d01f375611b6e0e630daf4e2d72a9d7ac7d9414484b3cb4c7",
+    "candidate_index": 47,
+    "descriptor": [
+      0,
+      0,
+      0.5,
+      0.1,
+      24.0,
+      6.0,
+      0.3,
+      0,
+      2,
+      2666624441,
+      276646038
+    ],
+    "selection_priority_score": 0.5958333333333333
+  }
+]

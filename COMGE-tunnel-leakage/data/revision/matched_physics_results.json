@@ -1,0 +1,489 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "RF1_M0",
+      "cfg": {
+        "id": "RF1_M0",
+        "mesh": "M0",
+        "field_id": "RF1",
+        "thm": true
+      },
+      "passed": true,
+      "soil_nodes": 1445,
+      "peak_L_m_d": 0.12902485122710167,
+      "peak_start": 186.5,
+      "peak_year": 1,
+      "annual_peaks": [
+        0.12902485122710167,
+        0.12837634955752109,
+        0.12803986060954414,
+        0.12786938517749538,
+        0.12778679149194339
+      ],
+      "annual_peak_starts": [
+        186.5,
+        553.5,
+        918.5,
+        1283.5,
+        1648.5
+      ],
+      "annual_volumes_L_m": [
+        24.70330048212635,
+        23.37527589696405,
+        23.21836028237989,
+        23.144777124249998,
+        23.112284228031267
+      ],
+      "errors": [
+        5.356617765453139e-10,
+        0.3464278131723404,
+        1.4388920002647532e-10,
+        0.0754287532817699
+      ],
+      "bounds": [
+        4.574511692506903e-07,
+        463.41681871819424,
+        3.703915203947426e-09,
+        3.6971757887190595
+      ],
+      "mechanics": {
+        "max_open_conductance": 0.0,
+        "max_mechanical_residual": 0.00011380324576748535,
+        "max_absolute_principal_strain": 0.01825874685240613
+      },
+      "native": {
+        "pid": 47360,
+        "creation": 134393816007632535,
+        "exit_filetime": 134393823794085280,
+        "kernel_100ns": 1194687500,
+        "user_100ns": 14908593750,
+        "cpu_s": 1610.328125,
+        "wall_s": 778.6452745,
+        "exit_code": 0,
+        "signaled": true
+      },
+      "solver": {
+        "solver_returned": true,
+        "days": 1825,
+        "wall_s": 722.4041669,
+        "script_cpu_s": 1588.734375,
+        "steps": 1265,
+        "max_scaled_residual": 1.9806007612992107e-08
+      },
+      "mat_sha": "5c1639d50e3aea1deb8ac396d0b7c002efa66c6ec392f0fa8a8c8b4136f64e62",
+      "checkpoint_sha": "d38719f817f93cdb248ba6f3073c62658501208743b591a60975fa05a631d4d8"
+    },
+    {
+      "case": "RF1_M1",
+      "cfg": {
+        "id": "RF1_M1",
+        "mesh": "M1",
+        "field_id": "RF1",
+        "thm": true
+      },
+      "passed": true,
+      "soil_nodes": 3236,
+      "peak_L_m_d": 0.1288947792259041,
+      "peak_start": 188.5,
+      "peak_year": 1,
+      "annual_peaks": [
+        0.1288947792259041,
+        0.12825107320481283,
+        0.12800271334553087,
+        0.12786714548007275,
+        0.12779579663323182
+      ],
+      "annual_peak_starts": [
+        188.5,
+        553.5,
+        920.5,
+        1285.5,
+        1650.5
+      ],
+      "annual_volumes_L_m": [
+        24.62454774330307,
+        23.296604066436696,
+        23.172222309357064,
+        23.114413383883537,
+        23.088859958122303
+      ],
+      "errors": [
+        1.2566712833235677e-09,
+        0.5522300004959106,
+        4.952091122363812e-11,
+        0.06475332474770168
+      ],
+      "bounds": [
+        4.574511692507049e-07,
+        463.4168187182088,
+        6.587409439686821e-10,
+        0.6520015287403153
+      ],
+      "mechanics": {
+        "max_open_conductance": 0.0,
+        "max_mechanical_residual": 0.00010451387788634747,
+        "max_absolute_principal_strain": 0.018525942011054314
+      },
+      "native": {
+        "pid": 4752,
+        "creation": 134393816008405860,
+        "exit_filetime": 134393831510877705,
+        "kernel_100ns": 2673437500,
+        "user_100ns": 30641718750,
+        "cpu_s": 3331.515625,
+        "wall_s": 1550.2471845,
+        "exit_code": 0,
+        "signaled": true
+      },
+      "solver": {
+        "solver_returned": true,
+        "days": 1825,
+        "wall_s": 1494.315358,
+        "script_cpu_s": 3310.1875,
+        "steps": 1265,
+        "max_scaled_residual": 1.9982446854282556e-08
+      },
+      "mat_sha": "1b3f000c0a7d9c6d5441823a60e5dbb1d91ea2470b0650728d64a5784740d6e3",
+      "checkpoint_sha": "72d722f4c9fd927c1e9cef56b47fbc0455b096715ee47fdbfa84b46bbbe5c1a9"
+    },
+    {
+      "case": "RF2_M0",
+      "cfg": {
+        "id": "RF2_M0",
+        "mesh": "M0",
+        "field_id": "RF2",
+        "thm": true
+      },
+      "passed": true,
+      "soil_nodes": 1445,
+      "peak_L_m_d": 0.1130627815442989,
+      "peak_start": 188.5,
+      "peak_year": 1,
+      "annual_peaks": [
+        0.1130627815442989,
+        0.11226486825252772,
+        0.11190491270314241,
+        0.11174347287382594,
+        0.11167235594063989
+      ],
+      "annual_peak_starts": [
+        188.5,
+        553.5,
+        918.5,
+        1285.5,
+        1650.5
+      ],
+      "annual_volumes_L_m": [
+        21.244725764920044,
+        20.058375875671906,
+        19.92451066674068,
+        19.869342105336045,
+        19.845591710837883
+      ],
+      "errors": [
+        8.541667327870844e-10,
+        0.5037728250026703,
+        2.8144258473928513e-10,
+        0.15782431068913638
+      ],
+      "bounds": [
+        4.574511692506903e-07,
+        463.41681871819424,
+        3.703915203947426e-09,
+        3.6971757887190595
+      ],
+      "mechanics": {
+        "max_open_conductance": 0.0,
+        "max_mechanical_residual": 0.00010065085371024907,
+        "max_absolute_principal_strain": 0.01761749098920104
+      },
+      "native": {
+        "pid": 40568,
+        "creation": 134393823830896757,
+        "exit_filetime": 134393830771476977,
+        "kernel_100ns": 1105156250,
+        "user_100ns": 14227031250,
+        "cpu_s": 1533.21875,
+        "wall_s": 694.058022,
+        "exit_code": 0,
+        "signaled": true
+      },
+      "solver": {
+        "solver_returned": true,
+        "days": 1825,
+        "wall_s": 683.3622124,
+        "script_cpu_s": 1511.3125,
+        "steps": 1265,
+        "max_scaled_residual": 1.9999557048527836e-08
+      },
+      "mat_sha": "ebb84e423204cc822b549df504d77a9be20fbc6b8780497cabe46cd9c61a8320",
+      "checkpoint_sha": "ee4106d703e97b0e047e6b8cd6b4fc30811637fe26e5cc6d313256c9645fcf4d"
+    },
+    {
+      "case": "RF2_M1",
+      "cfg": {
+        "id": "RF2_M1",
+        "mesh": "M1",
+        "field_id": "RF2",
+        "thm": true
+      },
+      "passed": true,
+      "soil_nodes": 3236,
+      "peak_L_m_d": 0.11293272737249067,
+      "peak_start": 188.5,
+      "peak_year": 1,
+      "annual_peaks": [
+        0.11293272737249067,
+        0.11231662173169225,
+        0.11206802521015456,
+        0.11194044874522338,
+        0.1118793389593275
+      ],
+      "annual_peak_starts": [
+        188.5,
+        555.5,
+        920.5,
+        1285.5,
+        1650.5
+      ],
+      "annual_volumes_L_m": [
+        21.160378403034382,
+        20.003116278495682,
+        19.90523755959869,
+        19.86021499557136,
+        19.837515625456142
+      ],
+      "errors": [
+        1.8015328511747017e-09,
+        0.9044448882341385,
+        5.65638272371402e-11,
+        0.051125406513108373
+      ],
+      "bounds": [
+        4.574511692507049e-07,
+        463.4168187182088,
+        6.587409439686821e-10,
+        0.6520015287403153
+      ],
+      "mechanics": {
+        "max_open_conductance": 0.0,
+        "max_mechanical_residual": 8.986861212179065e-05,
+        "max_absolute_principal_strain": 0.017809275413515686
+      },
+      "native": {
+        "pid": 33724,
+        "creation": 134393830813412547,
+        "exit_filetime": 134393847425980021,
+        "kernel_100ns": 2866718750,
+        "user_100ns": 33004375000,
+        "cpu_s": 3587.109375,
+        "wall_s": 1661.2567474,
+        "exit_code": 0,
+        "signaled": true
+      },
+      "solver": {
+        "solver_returned": true,
+        "days": 1825,
+        "wall_s": 1649.9586471,
+        "script_cpu_s": 3563.953125,
+        "steps": 1265,
+        "max_scaled_residual": 1.9707046542904233e-08
+      },
+      "mat_sha": "44a62bd9b5a11edb6ab26f32426171216bb0df1632011ce422a86f6a1a9b920c",
+      "checkpoint_sha": "d12db1967dfc7e733c5f2115d111af95d516bce3bf01519c33b2bc2c08c10f0c"
+    },
+    {
+      "case": "RF3_M0",
+      "cfg": {
+        "id": "RF3_M0",
+        "mesh": "M0",
+        "field_id": "RF3",
+        "thm": true
+      },
+      "passed": true,
+      "soil_nodes": 1445,
+      "peak_L_m_d": 0.034040046954468,
+      "peak_start": 186.5,
+      "peak_year": 1,
+      "annual_peaks": [
+        0.034040046954468,
+        0.03385995041339669,
+        0.03376566775506924,
+        0.03372046344437771,
+        0.0337004788509175
+      ],
+      "annual_peak_starts": [
+        186.5,
+        553.5,
+        918.5,
+        1283.5,
+        1648.5
+      ],
+      "annual_volumes_L_m": [
+        6.611688583550209,
+        6.2919548692781095,
+        6.256898360818177,
+        6.240933103794642,
+        6.2340206368628674
+      ],
+      "errors": [
+        1.0157758749255487e-09,
+        0.6396423280239105,
+        1.6886160669169456e-10,
+        0.090938016301223
+      ],
+      "bounds": [
+        4.574511692506903e-07,
+        463.41681871819424,
+        3.703915203947426e-09,
+        3.6971757887190595
+      ],
+      "mechanics": {
+        "max_open_conductance": 0.0,
+        "max_mechanical_residual": 0.000436439514714948,
+        "max_absolute_principal_strain": 0.01811260875914604
+      },
+      "native": {
+        "pid": 27076,
+        "creation": 134393831534582725,
+        "exit_filetime": 134393839231846481,
+        "kernel_100ns": 1294687500,
+        "user_100ns": 15237812500,
+        "cpu_s": 1653.25,
+        "wall_s": 769.7263756,
+        "exit_code": 0,
+        "signaled": true
+      },
+      "solver": {
+        "solver_returned": true,
+        "days": 1825,
+        "wall_s": 758.4415559,
+        "script_cpu_s": 1629.578125,
+        "steps": 1264,
+        "max_scaled_residual": 1.9705960095164938e-08
+      },
+      "mat_sha": "744b6b4f4962fcf30e85c687653c56e380d3dd555ccb07445a9827c3992cd7da",
+      "checkpoint_sha": "91e0069fa9db45687a374fb7b7c2fa7ff3d04832e410ff74559803077176955b"
+    },
+    {
+      "case": "RF3_M1",
+      "cfg": {
+        "id": "RF3_M1",
+        "mesh": "M1",
+        "field_id": "RF3",
+        "thm": true
+      },
+      "passed": true,
+      "soil_nodes": 3236,
+      "peak_L_m_d": 0.03400596934514133,
+      "peak_start": 186.5,
+      "peak_year": 1,
+      "annual_peaks": [
+        0.03400596934514133,
+        0.03382758208386584,
+        0.0337538316997342,
+        0.03371657214068354,
+        0.033699712445165175
+      ],
+      "annual_peak_starts": [
+        186.5,
+        553.5,
+        918.5,
+        1285.5,
+        1650.5
+      ],
+      "annual_volumes_L_m": [
+        6.5930467418965915,
+        6.274088388874972,
+        6.245652002110899,
+        6.232750544034331,
+        6.227504534259042
+      ],
+      "errors": [
+        1.1610662793075203e-09,
+        0.524664506316185,
+        4.6664122819862505e-11,
+        0.06511438776648504
+      ],
+      "bounds": [
+        4.574511692507049e-07,
+        463.4168187182088,
+        6.587409439686821e-10,
+        0.6520015287403153
+      ],
+      "mechanics": {
+        "max_open_conductance": 0.0,
+        "max_mechanical_residual": 0.00010520890828047413,
+        "max_absolute_principal_strain": 0.01827702473074349
+      },
+      "native": {
+        "pid": 34824,
+        "creation": 134393839257451983,
+        "exit_filetime": 134393854546648318,
+        "kernel_100ns": 2579531250,
+        "user_100ns": 30806406250,
+        "cpu_s": 3338.59375,
+        "wall_s": 1528.9196335,
+        "exit_code": 0,
+        "signaled": true
+      },
+      "solver": {
+        "solver_returned": true,
+        "days": 1825,
+        "wall_s": 1517.0516344,
+        "script_cpu_s": 3312.953125,
+        "steps": 1264,
+        "max_scaled_residual": 1.9756276335537428e-08
+      },
+      "mat_sha": "762c6744d1b813c6e40e7f2209e02a4d86dc55c129ed37f9e5eb93644389654d",
+      "checkpoint_sha": "d2c5bd3a84401da5f2cefd00e848e51b0c17291c5d61cbdda638a29eebb48097"
+    }
+  ],
+  "contrasts": [
+    {
+      "field": "RF1",
+      "joint_COV": 0.1,
+      "M0_peak": 0.12902485122710167,
+      "M1_peak": 0.1288947792259041,
+      "peak_difference_percent": 0.10091332013502097,
+      "M0_year5_volume": 23.112284228031267,
+      "M1_year5_volume": 23.088859958122303,
+      "volume_difference_percent": 0.10145269169397064,
+      "five_year_daily_L1_percent": 0.29105063191204134,
+      "threshold": 0.17827224170071532,
+      "M0_exceeds": false,
+      "M1_exceeds": false
+    },
+    {
+      "field": "RF2",
+      "joint_COV": 0.25,
+      "M0_peak": 0.1130627815442989,
+      "M1_peak": 0.11293272737249067,
+      "peak_difference_percent": 0.11516074643205254,
+      "M0_year5_volume": 19.845591710837883,
+      "M1_year5_volume": 19.837515625456142,
+      "volume_difference_percent": 0.04071117338593222,
+      "five_year_daily_L1_percent": 0.34622520555179453,
+      "threshold": 0.17827224170071532,
+      "M0_exceeds": false,
+      "M1_exceeds": false
+    },
+    {
+      "field": "RF3",
+      "joint_COV": 0.4,
+      "M0_peak": 0.034040046954468,
+      "M1_peak": 0.03400596934514133,
+      "peak_difference_percent": 0.1002106688411164,
+      "M0_year5_volume": 6.2340206368628674,
+      "M1_year5_volume": 6.227504534259042,
+      "volume_difference_percent": 0.1046342490475638,
+      "five_year_daily_L1_percent": 0.2762054835142064,
+      "threshold": 0.17827224170071532,
+      "M0_exceeds": false,
+      "M1_exceeds": false
+    }
+  ],
+  "wall_s": 1.9397264000144787,
+  "audit_source_sha256": "9a7aca5df757a68b1c8290ea0320ccbb462c2140fea741a94d90e5cdea13d57e"
+}

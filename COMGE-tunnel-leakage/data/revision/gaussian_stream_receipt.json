@@ -1,0 +1,23 @@
+{
+  "createdUTC": "2026-10-12T00:38:00.737321+00:00",
+  "seed_namespace": [
+    20261012,
+    60821
+  ],
+  "replications": 8,
+  "per_replication": 16384,
+  "base_soil_shape": [
+    131072,
+    169
+  ],
+  "base_joint_shape": [
+    131072,
+    64
+  ],
+  "soil_sha256": "e44379a5d11d596f68211b622adb5bd4af421c1015f548f7c7ec1bfd0d12266c",
+  "joint_sha256": "e5f6aaad672f5e3ecfef2f62bcb0f05989e8e0a9b836ccaf7fa11547edbb952e",
+  "independent_vectors_within_case": 131072,
+  "shared_across_cases": true,
+  "full_fields_generated": false,
+  "physical_calls": 0
+}

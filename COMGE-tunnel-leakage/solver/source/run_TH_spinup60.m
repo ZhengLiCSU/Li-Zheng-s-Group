@@ -1,0 +1,282 @@
+function result=run_TH_spinup60(user)
+% RUN_TH_SPINUP60 Annual continuation with a HARD total limit <=60 years.
+% Run result=run_TH_spinup60; resume with struct('resume',true).
+% TH_2D_conservative_v7.m and example_mesh_verified.mat must be on this path.
+% All thresholds below are numerical research criteria, not design standards.
+if nargin<1, user=struct(); end
+root=fileparts(mfilename('fullpath')); addpath(root);
+c=struct('maxYears',60,'consecutiveYears',3,'productionYears',1, ...
+ 'tolT',.02,'tolH',.05,'tolWater',1e-4,'tolIce',1e-4, ...
+ 'roiTolT',.05,'roiTolH',.10,'roiTolWater',5e-4,'roiTolIce',5e-4,'roiRadius',16, ...
+ 'tolLeakRelative',.005,'tolLeakAbsolute',1e-6, ...
+ 'resume',false,'outputFolder',fullfile(root,'spinup60_output'), ...
+ 'model',struct());
+names=fieldnames(user);
+for k=1:numel(names)
+ assert(isfield(c,names{k}),['Unknown option: ' names{k}]); c.(names{k})=user.(names{k});
+end
+assert(isscalar(c.maxYears)&&c.maxYears==fix(c.maxYears)&&c.maxYears>=1&&c.maxYears<=60);
+assert(c.consecutiveYears>=2&&c.consecutiveYears==fix(c.consecutiveYears));
+assert(c.productionYears==1,'One confirmation/production year is required.');
+assert(all([c.tolT c.tolH c.tolWater c.tolIce c.roiTolT c.roiTolH ...
+ c.roiTolWater c.roiTolIce c.roiRadius c.tolLeakRelative c.tolLeakAbsolute]>0));
+if ~isfolder(c.outputFolder), mkdir(c.outputFolder); end
+checkpointFile=fullfile(c.outputFolder,'spinup_progress.mat');
+o=struct('meshFile',fullfile(root,'example_mesh_verified.mat'),'durationDays',365, ...
+ 'outputEveryDays',365/12,'plot',false,'verbose',false,'saveOutput',true);
+o.initial=struct('mode','profile','surfaceT',-1,'gradient',.006);
+o.mechanics=struct('enable',false); % no feedback to TH; skip repeated elastic solves
+o.dtInitial=.1*86400; o.dtMax=86400; o.dtMin=86400/16384;
+% tol=2e-8 remains far below the physical stopping tolerances and avoids
+% demanding a residual below the finite-difference Jacobian noise floor.
+o.solver=struct('fd',1e-8,'maxIter',60,'tol',2e-8, ...
+ 'jacobianReuse',4,'jacobianRefreshRatio',.65, ...
+ 'dtTargetResidualEvals',180,'dtGrowthSafety',1.10, ...
+ 'dtGrowthMax',1.8,'dtShrinkMin',.5);
+o=combine(o,c.model);
+assert(~isfield(o,'yearDays')||o.yearDays==365);
+assert(~isfield(o,'day')||o.day==86400);
+assert(o.dtMax<=86400&&o.dtMax>0,'Maximum step must not exceed one day.');
+assert(any(strcmp(o.initial.mode,{'profile','fields'})), ...
+ 'Fresh runs use profile or measured fields; use resume for continuation.');
+o.durationDays=365; o.outputEveryDays=365/12; o.plot=false;
+o.outputPrefix=fullfile(c.outputFolder,'active_year');
+columns={'year','rmsDeltaT_C','rmsDeltaH_m','rmsDeltaWater','rmsDeltaIce', ...
+ 'roiMaxDeltaT_C','roiMaxDeltaH_m','roiMaxDeltaWater','roiMaxDeltaIce', ...
+ 'globalMaxDeltaT_C','globalMaxDeltaH_m','globalMaxDeltaWater','globalMaxDeltaIce', ...
+ 'leak_m3_per_m','deltaAnnualLeak_m3_per_m','relativeAnnualLeak', ...
+ 'relativeDailyLeakL1','waterDefect_m3_per_m','energyDefect_J_per_m', ...
+ 'sumAbsWaterDefect','sumAbsEnergyDefect','acceptedSteps','maxResidual','pass'};
+previous=[]; diagnostics=[]; legacyDiagnostics=[]; consecutive=0; convergedYear=NaN; completed=0;
+migrationNote='none'; numericalFailure='';
+if c.resume
+ assert(isfile(checkpointFile),'No completed-year checkpoint exists.');
+ d=load(checkpointFile,'progress'); z=d.progress;
+ previous=z.lastYear; completed=z.completedYears;
+ if isfield(z,'schemaVersion') && z.schemaVersion==2
+  expected=rmfield(c,{'resume','outputFolder'}); actual=rmfield(z.config,{'resume','outputFolder'});
+  assert(isequaln(expected,actual),'Resume must use identical model, criteria and year limit.');
+  diagnostics=z.diagnostics; consecutive=z.consecutive; convergedYear=z.convergedYear;
+  if isfield(z,'legacyDiagnostics'), legacyDiagnostics=z.legacyDiagnostics; end
+ else
+  % v1 migration: retain all completed years, restart convergence counting.
+  assert(z.config.maxYears==c.maxYears && isequaln(z.config.model,c.model), ...
+   'Legacy resume requires the same 60-year cap and physical model overrides.');
+  legacyDiagnostics=z.diagnostics; migrationNote=sprintf( ...
+   'Migrated v1 checkpoint after %d complete years; v2 convergence counting starts now.',completed);
+  fprintf('%s\n',migrationNote);
+ end
+else
+ assert(~isfile(checkpointFile),'Output already exists. Use resume=true or a new outputFolder.');
+end
+activeResume=loadActiveYear(c.outputFolder,completed);
+if activeResume.use
+ fprintf(['Found valid v6/v7 month checkpoint at day %.8g. ' ...
+  'Year %d will continue from this state.\n'],activeResume.day,completed+1);
+end
+status='maximum_years_reached_unconverged';
+lastYearToRun=c.maxYears;
+if ~isnan(convergedYear)&&completed>=convergedYear+c.productionYears
+ lastYearToRun=completed;
+end
+for year=completed+1:lastYearToRun
+ usingPartial=activeResume.use && year==completed+1;
+ if usingPartial
+  assert(~isempty(previous),'An active-year checkpoint requires a completed previous year.');
+  o.mesh=previous.mesh;
+  o.initial=struct('mode','checkpoint','checkpointFile',activeResume.file);
+  o.durationDays=year*365-activeResume.day;
+  savePartialPrefix(c.outputFolder,year,activeResume);
+ elseif ~isempty(previous)
+  o.mesh=previous.mesh; o.initial=struct('mode','fields','T',previous.T, ...
+   'h',previous.h,'startDay',(year-1)*365);
+  o.durationDays=365;
+ else
+  o.initial.startDay=0;
+  o.durationDays=365;
+ end
+ fprintf('Starting year %d/%d (total physical-time cap includes production).\n',year,c.maxYears);
+ try
+  out=TH_2D_conservative_v7(o);
+ catch ME
+  if ~strcmp(ME.identifier,'TH:nonconvergence'), rethrow(ME); end
+  numericalFailure=sprintf('Year %d stopped at the last accepted substep: %s',year,ME.message);
+  warning('TH:annualFailure','%s',numericalFailure); status='numerical_failure_saved'; break
+ end
+ if usingPartial
+  assert(size(activeResume.hist,2)==size(out.history,2), ...
+   'Partial-year history schema differs from v7 history.');
+  out.history=[activeResume.hist;out.history];
+  out.snapshots=[activeResume.snaps,out.snapshots];
+  out.initialX=[previous.T;previous.h];
+  out.partialYearResume=struct('used',true,'resumeDay',activeResume.day, ...
+   'phaseSnapshotsComplete',numel(out.snapshots)==12);
+  out.solverWork=workFromHistory(out.history,out.solverWork.rejectedSteps);
+  save([o.outputPrefix '_results.mat'],'out','-v7');
+ else
+  out.partialYearResume=struct('used',false,'resumeDay',NaN, ...
+   'phaseSnapshotsComplete',numel(out.snapshots)==12);
+ end
+ assert(abs(out.timeDay-year*365)<1e-7&&all(isfinite(out.history(:))));
+ assert(all(diff(out.history(:,1))>0)&&abs(sum(out.history(:,2))-365)<1e-6, ...
+  'Annual history is incomplete or contains duplicated time steps.');
+ h=out.history; daily=dailyLeak(out); volume=sum(daily);
+ metric=inf(1,12); dv=inf; rv=inf; rq=inf; dailyDifference=inf; oldVolume=0;
+ if ~isempty(previous)
+  if numel(out.snapshots)==12 && numel(previous.snapshots)==12
+   metric=phaseDifference(out,previous,c);
+  else
+   warning('TH:incompletePhaseHistory', ...
+    'Year %d has incomplete monthly phase history; field criteria fail safely for this comparison.',year);
+  end
+  oldDaily=dailyLeak(previous); oldVolume=sum(oldDaily);
+  dv=abs(volume-oldVolume); denominator=max([volume oldVolume c.tolLeakAbsolute]);
+  dailyDifference=sum(abs(daily-oldDaily));
+  rv=dv/denominator; rq=dailyDifference/denominator;
+ end
+ pass=all(metric(1:4)<=[c.tolT c.tolH c.tolWater c.tolIce]) ...
+  && all(metric(5:8)<=[c.roiTolT c.roiTolH c.roiTolWater c.roiTolIce]) ...
+  && dv<=c.tolLeakAbsolute+c.tolLeakRelative*max(volume,oldVolume) ...
+  && dailyDifference<=c.tolLeakAbsolute+c.tolLeakRelative*max(volume,oldVolume);
+ if pass, consecutive=consecutive+1; else, consecutive=0; convergedYear=NaN; end
+ if consecutive>=c.consecutiveYears&&isnan(convergedYear), convergedYear=year; end
+ row=[year metric volume dv rv rq sum(h(:,8)) sum(h(:,9)) ...
+  sum(abs(h(:,8))) sum(abs(h(:,9))) size(h,1) max(h(:,11)) double(pass)];
+ diagnostics=[diagnostics;row]; %#ok<AGROW>
+ fprintf(['Year %d: RMS[dT dh dW dI]=[%.3g %.3g %.3g %.3g], ' ...
+  'ROImax=[%.3g %.3g %.3g %.3g]; globalMax=[%.3g %.3g %.3g %.3g]; ' ...
+  'leak=%.6g L/m; annual=%.3g%%; dailyL1=%.3g%%; consecutive=%d\n'], ...
+  year,metric,1000*volume,100*rv,100*rq,consecutive);
+ previous=out; completed=year;
+ activeResume.use=false;
+ progress=struct('schemaVersion',2,'config',c,'completedYears',completed,'lastYear',out, ...
+  'diagnostics',diagnostics,'columns',{columns},'consecutive',consecutive,'convergedYear',convergedYear);
+ progress.legacyDiagnostics=legacyDiagnostics; progress.migrationNote=migrationNote;
+ % Atomic completed-year checkpoint; an interruption loses at most the active year.
+ tempFile=fullfile(c.outputFolder,'spinup_progress_tmp.mat');
+ save(tempFile,'progress','-v7'); movefile(tempFile,checkpointFile,'f');
+ if ~isnan(convergedYear)&&year>=convergedYear+c.productionYears
+  status='converged_and_confirmation_year_completed'; break
+ end
+ % Optional user-requested orderly pause; remove this marker before resuming.
+ if isfile(fullfile(c.outputFolder,'PAUSE_AFTER_YEAR'))
+  status='paused_at_year_boundary'; break
+ end
+end
+if ~any(strcmp(status,{'converged_and_confirmation_year_completed','paused_at_year_boundary', ...
+ 'numerical_failure_saved'}))&&~isnan(convergedYear)
+ if completed>=convergedYear+1
+  status='converged_and_confirmation_year_completed';
+ else
+  status='converged_at_cap_no_confirmation_year';
+ end
+end
+result=struct('status',status,'completedYears',completed,'convergedYear',convergedYear, ...
+ 'periodicConverged',~isnan(convergedYear),'productionComplete',strcmp(status,'converged_and_confirmation_year_completed'), ...
+ 'diagnostics',diagnostics,'columns',{columns},'lastYear',previous,'config',c);
+result.schemaVersion=2; result.legacyDiagnostics=legacyDiagnostics;
+result.migrationNote=migrationNote; result.numericalFailure=numericalFailure;
+save(fullfile(c.outputFolder,'TH_spinup60_results.mat'),'result','-v7');
+fprintf('STOP: %s; %d years; never exceeds %d total years.\n',status,completed,c.maxYears);
+end
+
+function r=loadActiveYear(folder,completed)
+% Recover a v6/v7 monthly checkpoint newer than the last complete year.
+emptySnaps=struct('timeDay',{},'T',{},'h',{},'thetaW',{},'thetaI',{});
+r=struct('use',false,'file','','day',NaN,'hist',zeros(0,14), ...
+ 'snaps',{emptySnaps},'reason','no compatible active-year checkpoint');
+file=fullfile(folder,'active_year_checkpoint.mat');
+if ~isfile(file), return; end
+z=load(file);
+if ~isfield(z,'checkpoint')||~isfield(z,'hist'), return; end
+cp=z.checkpoint;
+if ~isfield(cp,'version')||~any(strcmp(cp.version,{'TH_v6_20260909','TH_v7_20260910'})), return; end
+day=cp.time/86400; year=completed+1; first=(year-1)*365; last=year*365;
+if ~(day>first+1e-7 && day<last-1e-7), return; end
+phase=(day-first)/(365/12);
+if abs(phase-round(phase))>1e-6, return; end
+if isempty(z.hist)||size(z.hist,2)~=14||abs(z.hist(end,1)-day)>1e-6, return; end
+hist=z.hist; snaps=emptySnaps;
+if isfield(z,'snaps'), snaps=reshape(z.snaps,1,[]); end
+
+% Repeated interruptions remain resumable: the prefix stores all history
+% before the current engine segment, because the engine checkpoint itself
+% contains history only since its most recent start.
+prefixFile=fullfile(folder,'partial_year_prefix.mat');
+if isfile(prefixFile)
+ q=load(prefixFile,'partialYearBase');
+ if isfield(q,'partialYearBase')
+  b=q.partialYearBase;
+  if isfield(b,'year')&&b.year==year&&isfield(b,'checkpointDay')
+   if abs(b.checkpointDay-day)<1e-6
+    hist=b.hist; snaps=reshape(b.snaps,1,[]);
+   elseif b.checkpointDay<day-1e-7 && z.hist(1,1)>b.checkpointDay-1e-6
+    hist=[b.hist;z.hist]; snaps=[reshape(b.snaps,1,[]),snaps];
+   end
+  end
+ end
+end
+assert(all(diff(hist(:,1))>0)&&abs(hist(end,1)-day)<1e-6, ...
+ 'Corrupt or duplicated partial-year time history.');
+r=struct('use',true,'file',file,'day',day,'hist',hist,'snaps',{snaps}, ...
+ 'reason','compatible month checkpoint');
+end
+
+function savePartialPrefix(folder,year,r)
+partialYearBase=struct('year',year,'checkpointDay',r.day, ...
+ 'hist',r.hist,'snaps',{r.snaps}); %#ok<NASGU>
+tmp=fullfile(folder,'partial_year_prefix_tmp.mat');
+file=fullfile(folder,'partial_year_prefix.mat');
+save(tmp,'partialYearBase','-v7'); movefile(tmp,file,'f');
+end
+
+function w=workFromHistory(h,rejected)
+w=struct('acceptedSteps',size(h,1),'nonlinearIterations',sum(h(:,3)), ...
+ 'jacobianBuilds',sum(h(:,12)),'linearSolves',sum(h(:,13)), ...
+ 'residualEvaluations',sum(h(:,14)),'rejectedSteps',rejected);
+end
+
+function a=combine(a,b)
+f=fieldnames(b);
+for k=1:numel(f)
+ if isfield(a,f{k})&&isstruct(a.(f{k}))&&isstruct(b.(f{k}))
+  a.(f{k})=combine(a.(f{k}),b.(f{k}));
+ else, a.(f{k})=b.(f{k}); end
+end
+end
+
+function q=dailyLeak(out)
+h=out.history; start=out.timeDay-365;
+t=[start;h(:,1)]; v=[0;cumsum(h(:,10).*h(:,2)*86400)];
+q=diff(interp1(t,v,start+(0:365)','linear'));
+end
+
+function m=phaseDifference(a,b,c)
+% Compare 12 matching phases AND year endpoints across all nodes.
+assert(numel(a.snapshots)==12&&numel(b.snapshots)==12);
+m=zeros(1,12);
+for k=1:12
+ x=a.snapshots(k); y=b.snapshots(k);
+ assert(abs((x.timeDay-y.timeDay)-365)<1e-6);
+ m=max(m,oneDifference(x.T,x.h,x.thetaW+x.thetaI,x.thetaI, ...
+  y.T,y.h,y.thetaW+y.thetaI,y.thetaI,a,c));
+end
+m=max(m,oneDifference(a.T,a.h,a.state.total,a.state.thetaI, ...
+ b.T,b.h,b.state.total,b.state.thetaI,a,c));
+end
+
+function m=oneDifference(T,h,w,i,T0,h0,w0,i0,out,c)
+d={abs(T-T0),abs(h-h0),abs(w-w0),abs(i-i0)};
+rmsv=cellfun(@(x)sqrt(mean(x.^2)),d);
+xy=out.pAll;
+if isfield(out.mesh,'xc')&&isfield(out.mesh,'yc')
+ center=[out.mesh.xc out.mesh.yc];
+else
+ center=(min(xy,[],1)+max(xy,[],1))/2;
+end
+roiT=hypot(xy(:,1)-center(1),xy(:,2)-center(2))<=c.roiRadius;
+soil=out.soilNodes; roiH=roiT(soil);
+roiv=[max(d{1}(roiT)),max(d{2}(roiH)),max(d{3}(roiH)),max(d{4}(roiH))];
+globalv=cellfun(@max,d);
+m=[rmsv roiv globalv];
+end

@@ -1,0 +1,80 @@
+ORDERED KRIGING INPUTS AND NUMERICAL CONTROLS
+
+All array indices below are zero based. All logarithms are natural.
+The physical_features function that constructs this vector is in
+code/original/uq_workflow.py. No fitted response enters feature construction.
+
+Let h_i=log(r_i / 1 micrometre) at the 64 ordered J7 coordinates.
+Let k_j=log(K_j / K_mean) at the 169 listed soil witness coordinates.
+
+0    -log(mean(exp(-2 h_i)))
+1    -log(mean(exp(-4 h_i)))
+2-5  mean(h_i) in consecutive index blocks 0:16,16:32,32:48,48:64
+6    population standard deviation of h_i, ddof=0
+7-15 equal-weight regional means of k_j, with zone_x outer loop and zone_y
+     inner loop, each 0,1,2. The region membership is exactly tabulated in
+     data/example/soil_feature_sampling.csv, rather than inferred from a plot.
+16   population standard deviation of k_j over the 169 coordinates
+17   soil COV
+18   segment-joint radius-scale COV
+19   log(horizontal soil SOF in metres)
+20   log(vertical soil SOF in metres)
+21   log(segment-joint SOF in metres)
+22-24 soil one-hot indicators in order exponential, matern32, squared_exponential
+25-27 segment-joint indicators in the same order
+
+The witness indices refer to the complete field ordering, with soil nodes
+followed by quadrature coordinates. The original 169 points are soil nodes.
+For a point xy, the implemented region indices are
+min(floor(3*(xy-min(xy))/(max(xy)-min(xy))),2) along each coordinate.
+Within each region, weights sum to one. Regional feature weights differ from
+the uniform weights used in the global standard deviation.
+
+Physical transform
+soil_log = sqrt(log(1+COV_soil^2))*g - log(1+COV_soil^2)/2
+F4 radius arithmetic mean =
+1e-6 * ((1+0.25^2)/(1+COV_joint^2))^1.5 metres.
+radius = exp(log(radius_mean)+sqrt(log(1+COV_joint^2))*j
+             -log(1+COV_joint^2)/2).
+F4 fixes the pointwise ensemble fourth raw moment of the radius scale.
+It does not fix each realization's conductance or mean coupled leakage.
+
+Frozen prediction
+z = (X - input_mean)/input_scale
+K(z,z_train) = signal_variance *
+ exp(-0.5*sum(((z-z_train)/length_scale)^2))
+prediction = exp(target_mean + target_scale*(K @ alpha)).
+The fitted diagonal noise is used during training, not added to the mean
+cross-covariance at prediction points. It is retained in the exported arrays.
+
+Training specification
+Input scaling and standardized log response are fitted on training data only.
+The kernel is ConstantKernel * ARD RBF + WhiteKernel.
+Initial RBF length scales 3, bounds [0.05,10000].
+Initial signal variance 1, bounds [0.001,1000].
+Initial noise variance 0.01, bounds [1e-6,0.5].
+Numerical training diagonal alpha=1e-9.
+L-BFGS-B uses maxiter=100 and ftol=1e-8.
+Random-state value is 20261009. Random eight-fold CV uses 20261011.
+Parameter-group CV uses GroupKFold(8), with the exact folds included in JSON.
+The fitted predictor is frozen. verify_review.py does not optimize it.
+
+Supplementary selection
+The exact family diagnostics and candidate scores are included.
+Across 48 candidates the priority is 0.40*coverage_rank +
+0.35*model_disagreement_rank + 0.25*predicted_response_rank.
+Ranks are empirical fractions less than or equal to each value.
+Within each of 12 selected families, the six candidate pairs are ranked by
+0.60*mean_priority + 0.25*near_feature_rank + 0.15*spatial_contrast_rank.
+The first rewards nearby standardized 28-dimensional features, the second
+rewards distinct centered complete Gaussian soil fields. Ties use the smaller
+minimum candidate index. The original sources and recorded all-pair scores
+give the exact rule, including selected family definitions.
+This selection is not isolated from sample-count effects by the 512/608
+ablation, which measures their combined supplementary-training effect.
+
+Precision
+Feature replay absolute tolerance 1e-12.
+Frozen prediction replay absolute tolerance 1e-10 L m^-1 d^-1.
+These are floating-point reconstruction tolerances, not physical-error bounds.
+

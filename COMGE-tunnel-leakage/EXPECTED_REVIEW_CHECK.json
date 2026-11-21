@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "files_checked": 381,
+  "feature_reconstruction_max_abs": 0.0,
+  "prediction_replay_max_abs_L_m-1_d-1": 2.0046186932631826e-12,
+  "predictor_tolerance_abs": 1e-10,
+  "example_prediction_L_m-1_d-1": 0.0905779291157716,
+  "validation": {
+    "all80": {
+      "n": 80,
+      "physical_exceedances": 2,
+      "relative_L2_percent": 0.23164163942602528,
+      "maximum_absolute_relative_error_percent": 0.6199917156712864,
+      "classification_disagreements": 0
+    },
+    "near_threshold_within20percent": {
+      "n": 11,
+      "physical_exceedances": 1,
+      "relative_L2_percent": 0.3186187839931518,
+      "maximum_absolute_relative_error_percent": 0.5596160621317292,
+      "classification_disagreements": 0
+    }
+  },
+  "MC_max_change_probability_pp_mean_percent_p95_percent": [
+    0.08697509765625,
+    0.14696120191957096,
+    0.3606263591500847
+  ],
+  "MC_settings": 4181,
+  "paired_contrasts_recomputed": 270,
+  "CV_splits_checked": true,
+  "physical_histories_reintegrated": 6,
+  "figure12d_parameters": {
+    "soil_cov": 0.25,
+    "joint_cov": 0.25,
+    "soil_theta_m": [
+      25.722563100871,
+      6.430640775218
+    ],
+    "joint_theta_m": 0.3,
+    "soil_kernel": "squared_exponential",
+    "joint_kernel": "exponential"
+  },
+  "figure12d_probability": 0.05011749267578125,
+  "new_solver_calls": 0,
+  "new_model_fits": 0,
+  "new_random_fields": 0,
+  "scope": "Reconstruction of saved inputs, frozen predictions and statistics, not a new physical or probability calibration experiment."
+}

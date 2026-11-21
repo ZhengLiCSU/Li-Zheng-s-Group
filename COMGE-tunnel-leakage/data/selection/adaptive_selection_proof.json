@@ -1,0 +1,874 @@
+{
+  "createdUTC": "2026-10-11T12:28:08.228212+00:00",
+  "passed": true,
+  "source_sha256": "e7a4241a5df0e9b48090b27a1d8c629a3ececbcbdfe29de66e9e7d2f55a0dabd",
+  "contracts_sha256": "2a21d344a0d9ee9d29f9abb438a463c9876ec6ab85b9950c4561de5c92dc031d",
+  "family_diagnostic_sha256": "b3eef1806497f5f8943d601d7470cb2b89b049822d62ae3f0473b5b220fd09cc",
+  "candidate_scores_sha256": "93aa5e217b397aaa6b915b2dc3723a16e4e0f95a9d544dc962da88b7b616dc64",
+  "requests24_sha256": "bdef7910f649923e4115ae3198c119d520dbe247f04e0caead73de4e2e2a7d50",
+  "certificates_sha256": "df23b1f33db194e57550a37fe575280a1859e74d34dd4800d19f34d7267f9741",
+  "candidate_fields": 48,
+  "selected_fields": 24,
+  "selected_candidate_indices": [
+    0,
+    3,
+    4,
+    6,
+    9,
+    10,
+    12,
+    15,
+    16,
+    17,
+    20,
+    22,
+    24,
+    26,
+    30,
+    31,
+    32,
+    33,
+    37,
+    38,
+    40,
+    42,
+    44,
+    47
+  ],
+  "pair_comparisons": [
+    {
+      "family_index": 0,
+      "pairs": [
+        {
+          "candidate_indices": [
+            0,
+            1
+          ],
+          "feature_distance28": 5.6818443452633485,
+          "centered_full_soil_gaussian_RMS_difference": 1.2418583489624024,
+          "mean_priority": 0.3578125,
+          "pair_score": 0.3646875
+        },
+        {
+          "candidate_indices": [
+            0,
+            2
+          ],
+          "feature_distance28": 6.089034668808829,
+          "centered_full_soil_gaussian_RMS_difference": 1.558395939233567,
+          "mean_priority": 0.40625,
+          "pair_score": 0.4354166666666667
+        },
+        {
+          "candidate_indices": [
+            0,
+            3
+          ],
+          "feature_distance28": 3.781204847536048,
+          "centered_full_soil_gaussian_RMS_difference": 1.254249175150358,
+          "mean_priority": 0.4932291666666667,
+          "pair_score": 0.5959375
+        },
+        {
+          "candidate_indices": [
+            1,
+            2
+          ],
+          "feature_distance28": 5.553029568280024,
+          "centered_full_soil_gaussian_RMS_difference": 1.4733421094135362,
+          "mean_priority": 0.34843750000000007,
+          "pair_score": 0.5173958333333334
+        },
+        {
+          "candidate_indices": [
+            1,
+            3
+          ],
+          "feature_distance28": 5.959880008080256,
+          "centered_full_soil_gaussian_RMS_difference": 1.3676177851004163,
+          "mean_priority": 0.43541666666666673,
+          "pair_score": 0.41958333333333336
+        },
+        {
+          "candidate_indices": [
+            2,
+            3
+          ],
+          "feature_distance28": 5.666526850815399,
+          "centered_full_soil_gaussian_RMS_difference": 1.4906843320534795,
+          "mean_priority": 0.4838541666666667,
+          "pair_score": 0.5819791666666667
+        }
+      ],
+      "selected_candidate_indices": [
+        0,
+        3
+      ]
+    },
+    {
+      "family_index": 1,
+      "pairs": [
+        {
+          "candidate_indices": [
+            4,
+            5
+          ],
+          "feature_distance28": 5.281277788739352,
+          "centered_full_soil_gaussian_RMS_difference": 1.3874038324690703,
+          "mean_priority": 0.28020833333333334,
+          "pair_score": 0.3597916666666666
+        },
+        {
+          "candidate_indices": [
+            4,
+            6
+          ],
+          "feature_distance28": 4.435923477135245,
+          "centered_full_soil_gaussian_RMS_difference": 1.1784427101428077,
+          "mean_priority": 0.33125,
+          "pair_score": 0.42374999999999996
+        },
+        {
+          "candidate_indices": [
+            4,
+            7
+          ],
+          "feature_distance28": 5.258912058999745,
+          "centered_full_soil_gaussian_RMS_difference": 1.208386700091914,
+          "mean_priority": 0.21406250000000002,
+          "pair_score": 0.33677083333333335
+        },
+        {
+          "candidate_indices": [
+            5,
+            6
+          ],
+          "feature_distance28": 4.098171862721604,
+          "centered_full_soil_gaussian_RMS_difference": 1.1118323905780008,
+          "mean_priority": 0.2427083333333333,
+          "pair_score": 0.3622916666666666
+        },
+        {
+          "candidate_indices": [
+            5,
+            7
+          ],
+          "feature_distance28": 3.7174113468797985,
+          "centered_full_soil_gaussian_RMS_difference": 1.1571828403159996,
+          "mean_priority": 0.12552083333333333,
+          "pair_score": 0.35864583333333333
+        },
+        {
+          "candidate_indices": [
+            6,
+            7
+          ],
+          "feature_distance28": 3.3413601122018517,
+          "centered_full_soil_gaussian_RMS_difference": 1.0733170520019846,
+          "mean_priority": 0.17656249999999998,
+          "pair_score": 0.38093750000000004
+        }
+      ],
+      "selected_candidate_indices": [
+        4,
+        6
+      ]
+    },
+    {
+      "family_index": 2,
+      "pairs": [
+        {
+          "candidate_indices": [
+            8,
+            9
+          ],
+          "feature_distance28": 3.4762390562140073,
+          "centered_full_soil_gaussian_RMS_difference": 0.9125417047225153,
+          "mean_priority": 0.2661458333333333,
+          "pair_score": 0.4346875
+        },
+        {
+          "candidate_indices": [
+            8,
+            10
+          ],
+          "feature_distance28": 3.8210260879075815,
+          "centered_full_soil_gaussian_RMS_difference": 1.0343265941322388,
+          "mean_priority": 0.2947916666666667,
+          "pair_score": 0.41854166666666665
+        },
+        {
+          "candidate_indices": [
+            8,
+            11
+          ],
+          "feature_distance28": 5.781019417836949,
+          "centered_full_soil_gaussian_RMS_difference": 0.953539856628092,
+          "mean_priority": 0.3302083333333333,
+          "pair_score": 0.28979166666666667
+        },
+        {
+          "candidate_indices": [
+            9,
+            10
+          ],
+          "feature_distance28": 3.6369157523923894,
+          "centered_full_soil_gaussian_RMS_difference": 1.1727475435022567,
+          "mean_priority": 0.2453125,
+          "pair_score": 0.48052083333333334
+        },
+        {
+          "candidate_indices": [
+            9,
+            11
+          ],
+          "feature_distance28": 5.03983871372858,
+          "centered_full_soil_gaussian_RMS_difference": 1.0668191269356067,
+          "mean_priority": 0.2807291666666667,
+          "pair_score": 0.3517708333333333
+        },
+        {
+          "candidate_indices": [
+            10,
+            11
+          ],
+          "feature_distance28": 4.976841891203657,
+          "centered_full_soil_gaussian_RMS_difference": 1.320910295761123,
+          "mean_priority": 0.30937499999999996,
+          "pair_score": 0.46062499999999995
+        }
+      ],
+      "selected_candidate_indices": [
+        9,
+        10
+      ]
+    },
+    {
+      "family_index": 3,
+      "pairs": [
+        {
+          "candidate_indices": [
+            12,
+            13
+          ],
+          "feature_distance28": 6.205152293519935,
+          "centered_full_soil_gaussian_RMS_difference": 1.2326751924592247,
+          "mean_priority": 0.44166666666666665,
+          "pair_score": 0.38166666666666665
+        },
+        {
+          "candidate_indices": [
+            12,
+            14
+          ],
+          "feature_distance28": 5.848276885626105,
+          "centered_full_soil_gaussian_RMS_difference": 1.2401978571562198,
+          "mean_priority": 0.40937500000000004,
+          "pair_score": 0.42895833333333333
+        },
+        {
+          "candidate_indices": [
+            12,
+            15
+          ],
+          "feature_distance28": 3.7600062942692434,
+          "centered_full_soil_gaussian_RMS_difference": 1.3832403096915407,
+          "mean_priority": 0.25416666666666665,
+          "pair_score": 0.5525
+        },
+        {
+          "candidate_indices": [
+            13,
+            14
+          ],
+          "feature_distance28": 5.754022891642019,
+          "centered_full_soil_gaussian_RMS_difference": 1.216923582932201,
+          "mean_priority": 0.5302083333333334,
+          "pair_score": 0.49312500000000004
+        },
+        {
+          "candidate_indices": [
+            13,
+            15
+          ],
+          "feature_distance28": 5.467977120212133,
+          "centered_full_soil_gaussian_RMS_difference": 1.307035848971834,
+          "mean_priority": 0.375,
+          "pair_score": 0.5166666666666666
+        },
+        {
+          "candidate_indices": [
+            14,
+            15
+          ],
+          "feature_distance28": 4.643734758142786,
+          "centered_full_soil_gaussian_RMS_difference": 1.2111292386642492,
+          "mean_priority": 0.34270833333333334,
+          "pair_score": 0.43895833333333334
+        }
+      ],
+      "selected_candidate_indices": [
+        12,
+        15
+      ]
+    },
+    {
+      "family_index": 4,
+      "pairs": [
+        {
+          "candidate_indices": [
+            16,
+            17
+          ],
+          "feature_distance28": 5.22313980271685,
+          "centered_full_soil_gaussian_RMS_difference": 1.4835548419154234,
+          "mean_priority": 0.596875,
+          "pair_score": 0.733125
+        },
+        {
+          "candidate_indices": [
+            16,
+            18
+          ],
+          "feature_distance28": 7.5604218863703165,
+          "centered_full_soil_gaussian_RMS_difference": 1.4889948051381523,
+          "mean_priority": 0.6427083333333333,
+          "pair_score": 0.6189583333333333
+        },
+        {
+          "candidate_indices": [
+            16,
+            19
+          ],
+          "feature_distance28": 8.109584989353666,
+          "centered_full_soil_gaussian_RMS_difference": 1.3377529770325556,
+          "mean_priority": 0.5645833333333334,
+          "pair_score": 0.4304166666666667
+        },
+        {
+          "candidate_indices": [
+            17,
+            18
+          ],
+          "feature_distance28": 5.662675888880577,
+          "centered_full_soil_gaussian_RMS_difference": 1.1773147447408874,
+          "mean_priority": 0.5385416666666667,
+          "pair_score": 0.5147916666666666
+        },
+        {
+          "candidate_indices": [
+            17,
+            19
+          ],
+          "feature_distance28": 5.3546768771275985,
+          "centered_full_soil_gaussian_RMS_difference": 1.363670992560115,
+          "mean_priority": 0.4604166666666667,
+          "pair_score": 0.5595833333333333
+        },
+        {
+          "candidate_indices": [
+            18,
+            19
+          ],
+          "feature_distance28": 5.963212038845433,
+          "centered_full_soil_gaussian_RMS_difference": 1.460778888123247,
+          "mean_priority": 0.5062500000000001,
+          "pair_score": 0.52875
+        }
+      ],
+      "selected_candidate_indices": [
+        16,
+        17
+      ]
+    },
+    {
+      "family_index": 5,
+      "pairs": [
+        {
+          "candidate_indices": [
+            20,
+            21
+          ],
+          "feature_distance28": 5.728790973598082,
+          "centered_full_soil_gaussian_RMS_difference": 1.2559193411403278,
+          "mean_priority": 0.5744791666666667,
+          "pair_score": 0.6446875000000001
+        },
+        {
+          "candidate_indices": [
+            20,
+            22
+          ],
+          "feature_distance28": 9.100325766449815,
+          "centered_full_soil_gaussian_RMS_difference": 1.6016597041010958,
+          "mean_priority": 0.6583333333333333,
+          "pair_score": 0.6866666666666666
+        },
+        {
+          "candidate_indices": [
+            20,
+            23
+          ],
+          "feature_distance28": 7.612650473225625,
+          "centered_full_soil_gaussian_RMS_difference": 1.2230959774539323,
+          "mean_priority": 0.6557291666666667,
+          "pair_score": 0.6267708333333334
+        },
+        {
+          "candidate_indices": [
+            21,
+            22
+          ],
+          "feature_distance28": 10.540893981296636,
+          "centered_full_soil_gaussian_RMS_difference": 1.3333766640179106,
+          "mean_priority": 0.6255208333333333,
+          "pair_score": 0.4919791666666667
+        },
+        {
+          "candidate_indices": [
+            21,
+            23
+          ],
+          "feature_distance28": 9.905762725008747,
+          "centered_full_soil_gaussian_RMS_difference": 1.3974674557175766,
+          "mean_priority": 0.6229166666666667,
+          "pair_score": 0.59875
+        },
+        {
+          "candidate_indices": [
+            22,
+            23
+          ],
+          "feature_distance28": 10.44614212887242,
+          "centered_full_soil_gaussian_RMS_difference": 1.6218456187560741,
+          "mean_priority": 0.7067708333333333,
+          "pair_score": 0.6573958333333334
+        }
+      ],
+      "selected_candidate_indices": [
+        20,
+        22
+      ]
+    },
+    {
+      "family_index": 6,
+      "pairs": [
+        {
+          "candidate_indices": [
+            24,
+            25
+          ],
+          "feature_distance28": 5.006718065523666,
+          "centered_full_soil_gaussian_RMS_difference": 1.1927077445591807,
+          "mean_priority": 0.6880208333333333,
+          "pair_score": 0.7044791666666667
+        },
+        {
+          "candidate_indices": [
+            24,
+            26
+          ],
+          "feature_distance28": 4.951361185923394,
+          "centered_full_soil_gaussian_RMS_difference": 1.1817563971671328,
+          "mean_priority": 0.7791666666666667,
+          "pair_score": 0.7758333333333333
+        },
+        {
+          "candidate_indices": [
+            24,
+            27
+          ],
+          "feature_distance28": 4.564041255189067,
+          "centered_full_soil_gaussian_RMS_difference": 1.1757566818787089,
+          "mean_priority": 0.7026041666666667,
+          "pair_score": 0.7215625000000001
+        },
+        {
+          "candidate_indices": [
+            25,
+            26
+          ],
+          "feature_distance28": 6.161155403417652,
+          "centered_full_soil_gaussian_RMS_difference": 1.1791180058692843,
+          "mean_priority": 0.7421875,
+          "pair_score": 0.6036458333333333
+        },
+        {
+          "candidate_indices": [
+            25,
+            27
+          ],
+          "feature_distance28": 6.938729899446685,
+          "centered_full_soil_gaussian_RMS_difference": 1.2132683098037682,
+          "mean_priority": 0.665625,
+          "pair_score": 0.5910416666666667
+        },
+        {
+          "candidate_indices": [
+            26,
+            27
+          ],
+          "feature_distance28": 5.9817775688289485,
+          "centered_full_soil_gaussian_RMS_difference": 1.1023559108759176,
+          "mean_priority": 0.7567708333333334,
+          "pair_score": 0.6040625000000001
+        }
+      ],
+      "selected_candidate_indices": [
+        24,
+        26
+      ]
+    },
+    {
+      "family_index": 7,
+      "pairs": [
+        {
+          "candidate_indices": [
+            28,
+            29
+          ],
+          "feature_distance28": 6.944730483194419,
+          "centered_full_soil_gaussian_RMS_difference": 0.9094618078824995,
+          "mean_priority": 0.5359375000000001,
+          "pair_score": 0.4382291666666667
+        },
+        {
+          "candidate_indices": [
+            28,
+            30
+          ],
+          "feature_distance28": 5.969675828378473,
+          "centered_full_soil_gaussian_RMS_difference": 0.8382740772167447,
+          "mean_priority": 0.36458333333333337,
+          "pair_score": 0.39375
+        },
+        {
+          "candidate_indices": [
+            28,
+            31
+          ],
+          "feature_distance28": 6.680728458858064,
+          "centered_full_soil_gaussian_RMS_difference": 1.3443364538879314,
+          "mean_priority": 0.45625000000000004,
+          "pair_score": 0.5070833333333333
+        },
+        {
+          "candidate_indices": [
+            29,
+            30
+          ],
+          "feature_distance28": 4.231148202764093,
+          "centered_full_soil_gaussian_RMS_difference": 0.767019472821699,
+          "mean_priority": 0.6307291666666667,
+          "pair_score": 0.6117708333333334
+        },
+        {
+          "candidate_indices": [
+            29,
+            31
+          ],
+          "feature_distance28": 5.606310201749427,
+          "centered_full_soil_gaussian_RMS_difference": 1.1567135671949123,
+          "mean_priority": 0.7223958333333333,
+          "pair_score": 0.7001041666666666
+        },
+        {
+          "candidate_indices": [
+            30,
+            31
+          ],
+          "feature_distance28": 3.7050672021861097,
+          "centered_full_soil_gaussian_RMS_difference": 1.3243028844681728,
+          "mean_priority": 0.5510416666666667,
+          "pair_score": 0.705625
+        }
+      ],
+      "selected_candidate_indices": [
+        30,
+        31
+      ]
+    },
+    {
+      "family_index": 8,
+      "pairs": [
+        {
+          "candidate_indices": [
+            32,
+            33
+          ],
+          "feature_distance28": 4.242382411055939,
+          "centered_full_soil_gaussian_RMS_difference": 1.5676744183948514,
+          "mean_priority": 0.29010416666666666,
+          "pair_score": 0.5323958333333333
+        },
+        {
+          "candidate_indices": [
+            32,
+            34
+          ],
+          "feature_distance28": 4.736964918196704,
+          "centered_full_soil_gaussian_RMS_difference": 1.4691787313833606,
+          "mean_priority": 0.3734375,
+          "pair_score": 0.4073958333333333
+        },
+        {
+          "candidate_indices": [
+            32,
+            35
+          ],
+          "feature_distance28": 3.890819438432915,
+          "centered_full_soil_gaussian_RMS_difference": 1.2618390586884767,
+          "mean_priority": 0.25416666666666665,
+          "pair_score": 0.4275
+        },
+        {
+          "candidate_indices": [
+            33,
+            34
+          ],
+          "feature_distance28": 4.499769253103822,
+          "centered_full_soil_gaussian_RMS_difference": 1.3296250680978552,
+          "mean_priority": 0.4489583333333333,
+          "pair_score": 0.44437499999999996
+        },
+        {
+          "candidate_indices": [
+            33,
+            35
+          ],
+          "feature_distance28": 4.481780553126517,
+          "centered_full_soil_gaussian_RMS_difference": 1.464443956119015,
+          "mean_priority": 0.3296875,
+          "pair_score": 0.4394791666666667
+        },
+        {
+          "candidate_indices": [
+            34,
+            35
+          ],
+          "feature_distance28": 6.293495947693558,
+          "centered_full_soil_gaussian_RMS_difference": 1.4923299712624865,
+          "mean_priority": 0.4130208333333333,
+          "pair_score": 0.4144791666666666
+        }
+      ],
+      "selected_candidate_indices": [
+        32,
+        33
+      ]
+    },
+    {
+      "family_index": 9,
+      "pairs": [
+        {
+          "candidate_indices": [
+            36,
+            37
+          ],
+          "feature_distance28": 3.833050623849381,
+          "centered_full_soil_gaussian_RMS_difference": 1.2782800739855789,
+          "mean_priority": 0.7833333333333332,
+          "pair_score": 0.77
+        },
+        {
+          "candidate_indices": [
+            36,
+            38
+          ],
+          "feature_distance28": 5.760839388611369,
+          "centered_full_soil_gaussian_RMS_difference": 1.2439416085269182,
+          "mean_priority": 0.8546875,
+          "pair_score": 0.6628125
+        },
+        {
+          "candidate_indices": [
+            36,
+            39
+          ],
+          "feature_distance28": 7.9889282044859184,
+          "centered_full_soil_gaussian_RMS_difference": 1.4116549009817168,
+          "mean_priority": 0.7140625,
+          "pair_score": 0.6201041666666667
+        },
+        {
+          "candidate_indices": [
+            37,
+            38
+          ],
+          "feature_distance28": 4.841053434140851,
+          "centered_full_soil_gaussian_RMS_difference": 1.3475427122258175,
+          "mean_priority": 0.8171875,
+          "pair_score": 0.7986458333333333
+        },
+        {
+          "candidate_indices": [
+            37,
+            39
+          ],
+          "feature_distance28": 5.40338153758322,
+          "centered_full_soil_gaussian_RMS_difference": 1.3181788929775295,
+          "mean_priority": 0.6765625,
+          "pair_score": 0.6476041666666665
+        },
+        {
+          "candidate_indices": [
+            38,
+            39
+          ],
+          "feature_distance28": 6.628972429210415,
+          "centered_full_soil_gaussian_RMS_difference": 1.3610948541605026,
+          "mean_priority": 0.7479166666666667,
+          "pair_score": 0.6570833333333334
+        }
+      ],
+      "selected_candidate_indices": [
+        37,
+        38
+      ]
+    },
+    {
+      "family_index": 10,
+      "pairs": [
+        {
+          "candidate_indices": [
+            40,
+            41
+          ],
+          "feature_distance28": 4.788377618377422,
+          "centered_full_soil_gaussian_RMS_difference": 1.1929219377531375,
+          "mean_priority": 0.4546875,
+          "pair_score": 0.5061458333333334
+        },
+        {
+          "candidate_indices": [
+            40,
+            42
+          ],
+          "feature_distance28": 3.7222884516760133,
+          "centered_full_soil_gaussian_RMS_difference": 1.307409412321816,
+          "mean_priority": 0.509375,
+          "pair_score": 0.630625
+        },
+        {
+          "candidate_indices": [
+            40,
+            43
+          ],
+          "feature_distance28": 5.994030474510896,
+          "centered_full_soil_gaussian_RMS_difference": 1.2025656588550564,
+          "mean_priority": 0.4328125,
+          "pair_score": 0.35135416666666663
+        },
+        {
+          "candidate_indices": [
+            41,
+            42
+          ],
+          "feature_distance28": 5.244542657347764,
+          "centered_full_soil_gaussian_RMS_difference": 1.4631249720943558,
+          "mean_priority": 0.5171875,
+          "pair_score": 0.5603125
+        },
+        {
+          "candidate_indices": [
+            41,
+            43
+          ],
+          "feature_distance28": 5.031239739763325,
+          "centered_full_soil_gaussian_RMS_difference": 1.4625631554246006,
+          "mean_priority": 0.44062499999999993,
+          "pair_score": 0.5310416666666666
+        },
+        {
+          "candidate_indices": [
+            42,
+            43
+          ],
+          "feature_distance28": 5.276310059680745,
+          "centered_full_soil_gaussian_RMS_difference": 1.5209219202242916,
+          "mean_priority": 0.4953125,
+          "pair_score": 0.5305208333333333
+        }
+      ],
+      "selected_candidate_indices": [
+        40,
+        42
+      ]
+    },
+    {
+      "family_index": 11,
+      "pairs": [
+        {
+          "candidate_indices": [
+            44,
+            45
+          ],
+          "feature_distance28": 4.2731683833383665,
+          "centered_full_soil_gaussian_RMS_difference": 1.0843154326240492,
+          "mean_priority": 0.8276041666666667,
+          "pair_score": 0.6882291666666667
+        },
+        {
+          "candidate_indices": [
+            44,
+            46
+          ],
+          "feature_distance28": 5.188332584494637,
+          "centered_full_soil_gaussian_RMS_difference": 1.151929246577141,
+          "mean_priority": 0.7505208333333333,
+          "pair_score": 0.5836458333333333
+        },
+        {
+          "candidate_indices": [
+            44,
+            47
+          ],
+          "feature_distance28": 3.906762182110018,
+          "centered_full_soil_gaussian_RMS_difference": 1.320491617081059,
+          "mean_priority": 0.6828125,
+          "pair_score": 0.8096875
+        },
+        {
+          "candidate_indices": [
+            45,
+            46
+          ],
+          "feature_distance28": 3.93437100379842,
+          "centered_full_soil_gaussian_RMS_difference": 1.1676983414778297,
+          "mean_priority": 0.8083333333333333,
+          "pair_score": 0.7683333333333333
+        },
+        {
+          "candidate_indices": [
+            45,
+            47
+          ],
+          "feature_distance28": 5.025329528716895,
+          "centered_full_soil_gaussian_RMS_difference": 1.257091952738563,
+          "mean_priority": 0.740625,
+          "pair_score": 0.694375
+        },
+        {
+          "candidate_indices": [
+            46,
+            47
+          ],
+          "feature_distance28": 5.550964713740302,
+          "centered_full_soil_gaussian_RMS_difference": 1.2028423215692234,
+          "mean_priority": 0.6635416666666667,
+          "pair_score": 0.5397916666666667
+        }
+      ],
+      "selected_candidate_indices": [
+        44,
+        47
+      ]
+    }
+  ],
+  "feature_sufficiency_proven": false,
+  "exact_feature_equivalence_claimed": false,
+  "validation_used": false,
+  "physical_calls": 0,
+  "full_field_generation_wall_s_once": 868.3405388999963,
+  "process_cpu_s": 851.765625
+}
